@@ -111,6 +111,9 @@ body {/**/
 
 h1, h2, h3 {
 	font-family: "Trebuchet MS",Arial,sans-serif;
+	font-weight: bold;
+	margin-bottom: 10px;
+	margin-top: 5px;
 
 }
 
@@ -133,7 +136,6 @@ h3 {
 #personalArea {
 	background: rgba(255, 255, 255, 0.05) none;
 	border-width: 1px 0px;
-	border-style: solid none;
 	border-color: rgba(255, 255, 255, 0.07) -moz-use-text-color;
 	min-height: 39px;
 	color: #B9C0B7;
@@ -184,7 +186,7 @@ h3 {
 
 #personalAreaTime #search_form input {
 	background-color: rgba(255, 255, 255, 0.05) none repeat scroll 0% 0%;
-	border: 1px solid #717171;
+	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: 4px 4px 4px 4px;
 	color: #D9D7D7;
 	height: 20px;
@@ -200,7 +202,7 @@ h3 {
 	right: 2px;
 	top: -4px;
 	cursor:pointer;
-	color: #000;
+	color: #d9eef7;
 	box-shadow: none;
 }
 
@@ -392,15 +394,19 @@ h3 {
 
 
 #contentBody {/**/
+
 	padding: 1px;
 	margin-bottom: 14px;
 }
 
 #contentBody2 {/**/
+
 	text-align: left;
 }
 #contentBody table{
 	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
+	-moz-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
 	background-color: rgba(23, 31, 44, 0.4);
 }
 /* general: comment system */
@@ -411,6 +417,8 @@ h3 {
 div.contentBox {
 	margin-bottom: 10px;
 	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
+	-moz-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
 	background-color: rgba(23, 31, 44, 0.4);
 }
 .contentBox .boxHeader {
@@ -420,6 +428,8 @@ div.contentBox {
     text-align: left;
     padding: 0px 8px;
     box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
+	-moz-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
     background-color: rgba(23, 31, 44, 0.4);
 }
 .contentBox .boxContent {
@@ -901,6 +911,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 	line-height: 18px;
 /*	text-align: left;*/
 	vertical-align: top;
+		padding: 6px;
 }
 
 .border-top {
@@ -2311,7 +2322,7 @@ div.error { display: none; }
     border: 1px solid #1A0F08;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
     background-color: rgba(23, 31, 44, 0.4);
-}
+
 }
 .article_content p {
 	margin-top: 10px;
@@ -2917,10 +2928,14 @@ table.leaderboard tbody tr td table.borderless tbody tr td {
 }
 
 /* Tags */
+.tags-container{
+margin-bottom:50px;
+}
+
 .tags{
 	padding:0;
 	list-style:none;
-	margin-top:20px;
+	margin-top:5px;
 }
 	
 .tags li, .tags a{
@@ -2939,15 +2954,9 @@ table.leaderboard tbody tr td table.borderless tbody tr td {
 .tags a{
 	margin-left:20px;
 	padding:0 10px 0 12px;
-	background:#4A7FA8;
+	background:rgba(3, 156, 255, 0.5);
 	color:#fff;
 	text-decoration:none;
-	-moz-border-radius-bottomright:4px;
-	-webkit-border-bottom-right-radius:4px;	
-	border-bottom-right-radius:4px;
-	-moz-border-radius-topright:4px;
-	-webkit-border-top-right-radius:4px;
-	border-top-right-radius:4px;
 }
 
 .tags a:before{
@@ -2958,7 +2967,7 @@ table.leaderboard tbody tr td table.borderless tbody tr td {
 	left:-12px;
 	width:0;
 	height:0;
-	border-color:transparent #4A7FA8 transparent transparent;
+	border-color:transparent rgba(3, 156, 255, 0.5) transparent transparent;
 	border-style:solid;
 	border-width:12px 12px 12px 0;
 }
@@ -3142,22 +3151,27 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 }
 
 .panel {
-	border: 1px solid #ddd;
-	border-radius: 4px;
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
+	-moz-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
+	border-radius: 0px;
 	margin-bottom: 15px;
 }
 .panel-heading {
-	background-color: #f5f5f5;
-	background-image: linear-gradient(to bottom, #f5f5f5 0px, #e8e8e8 100%);
+	background-color: rgba(23, 31, 44, 0.4);
+	background-image: linear-gradient(to bottom, rgba(23, 31, 44, 0.1) 0px, rgba(23, 31, 44, 0.4) 100%);
 	background-repeat: repeat-x;
-	border-color: #ddd;
+	border-color: rgba(0, 0, 0, 0.05);
+		box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
+	-moz-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
-	color: #333;
+	color: #FFF;
 	padding: 10px 15px;
 }
 .panel-body {
-	background-color: #fff;
+	background-color: rgba(23, 31, 44, 0.1);
 	padding: 10px 15px;
 }
 
@@ -3662,7 +3676,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 
 .dropdown li.focus {
 	background-color:#efefef !important;
-	color: #000;
+	color: #039cff !important;
 }
 
 .simple-header .ui-dialog {
@@ -3688,6 +3702,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 #personalAreaUser ul.dropdown-menu li.notification-content {
 	max-height: 400px;
 	overflow-y: auto;
+	min-width:300px;
 }
 
 #personalArea .dropdown-menu li ul li  {
@@ -3754,6 +3769,15 @@ border: 1px solid #E9E718 !important;
 
 .notification_list li:first-child{
 	border-top: 1px solid #ccc;
+}
+.toggleResponsive {
+	margin-bottom: 6px;
+}
+
+.rte-autocomplete.dropdown-menu {
+	margin-top: 12px;
+	text-align: left;
+	padding-left: 6px;
 }
 .elfinder .elfinder-navbar {
 	background-color: #131313 !important;
