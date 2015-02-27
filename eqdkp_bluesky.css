@@ -1241,7 +1241,7 @@ background: rgba(0, 0, 0, 0.65) !important;
 }
 
 .infobox-large {
-	border-radius: 6px 6px 6px 6px;
+	border-radius: 0;
 	padding: 10px;
 }
 
@@ -2763,17 +2763,24 @@ a.tool-item i {
 	line-height: 14px;
 	float: none;
 	margin-right:0px;
-	color: #666;
+	color: rgba(255, 255, 255, 0.7);
+}
+#user-tooltip li:hover {
+	background-color: rgba(255, 255, 255, 0.15);
 }
 
-#personalArea .dropdown-menu li > a{
+#personalArea .dropdown-menu li > a {
 	clear: both;
-	color: #039CFF;
+	color: rgba(255, 255, 255, 0.7);
 	display: block;
 	font-weight: normal;
 	line-height: 20px;
 	padding: 3px 20px;
 	white-space: nowrap;
+}
+#personalArea .dropdown-menu li > a:hover {
+	color: #00C0FF;
+	text-decoration: none;
 }
 
 ul#mychars-points-tooltip.dropdown-menu li table tbody tr td a {
@@ -3685,6 +3692,13 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 }
 
 /*new Notification mod Rev 14824*/
+#personalArea .dropdown-menu {
+	color: #FFF;
+}
+#notification-tooltip-all .hand:hover {
+	color: #FFF;
+}
+
 .notification-tooltip-container .dropdown-menu {
 	min-width: 300px;
 	
@@ -3713,11 +3727,15 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	border-bottom: 1px solid #547080;
 	margin-right: 4px;
 }
+#personalArea .dropdown-menu li ul li:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
 
 #personalArea .dropdown-menu li ul li > a {
 	display: inline;
 	white-space: normal;
 	padding-left: 0px;
+	color: #039CFF;
 }
 
 #personalArea .dropdown-menu li ul li .time {
