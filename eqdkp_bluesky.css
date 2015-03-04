@@ -100,8 +100,8 @@ body.simple-header {
 	margin: 5px;
 }
 
-body {/**/
-	background:url('TEMPLATE_IMAGE_PATH/background.jpg') no-repeat fixed center -200px #142944 !important;
+body {
+	background:url('TEMPLATE_BACKGROUND') no-repeat T_BACKGROUND_POSITION center -200px #142944 !important;
 	margin: 0px;
 	font-family: "Blizzard","Arial","Helvetica",sans-serif;
 	font-size: 13px;
@@ -393,13 +393,13 @@ h3 {
 }
 
 
-#contentBody {/**/
+#contentBody {
 
 	padding: 1px;
 	margin-bottom: 14px;
 }
 
-#contentBody2 {/**/
+#contentBody2 {
 
 	text-align: left;
 }
@@ -476,7 +476,7 @@ div.contentBox {
 	font-size: 14px;
 	margin: -5px -5px 5px;
 }
-.pageTitle {/**/
+.pageTitle {
     font-family: "Neverwinter","Trebuchet MS",Arial,sans-serif;
     font-size: 32px;
     margin-bottom: 20px;
@@ -489,7 +489,7 @@ div.contentBox {
 /***************************************************
  * PORTAL
  **************************************************/
-.portalbox { /**/
+.portalbox { 
 	margin: 10px 0px 4px;
 	border: 1px solid #1A0F08;
 	-webkit-box-shadow:  0px 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -502,7 +502,7 @@ div.contentBox {
 .portalbox td{
 box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
 }
-.portalbox_head { /**/
+.portalbox_head { 
 	font-family: 'Trebuchet MS',Arial,sans-serif;
 	padding-left: 5px;
 	font-size: 1.2em;
@@ -510,7 +510,7 @@ box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 
 	line-height: 28px;
 }
 
-.portalbox_content {/**/
+.portalbox_content {
 	white-space: normal;
 	background-color: rgba(23, 31, 44, 0.4);
 	padding: 0px 0px 0px;
@@ -586,11 +586,11 @@ ul.mainmenu li a.link_indexphp:before, ul.mainmenu li a.link_entry_home:before {
 }
 
 /* Links */
-a,a:link,a:active,a:visited {/**/
+a,a:link,a:active,a:visited {
 	color: #C5E5FF;
 	text-decoration: none;
 }
-a:hover {/**/
+a:hover {
 	color: #FFF;
 	text-decoration: none;
 }
@@ -767,7 +767,7 @@ cursor: not-allowed;
 /* color styles 
 ---------------------------------------------- */
 
-/* blue */ /**/
+/* blue */ 
 a.blue, a.blue:hover, a.button, a.button:hover {
 	color: #d9eef7;
 	line-height: 15px;
@@ -891,7 +891,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 	padding: 2px;
 }
 
-.table th, .portalbox_content th {/**/
+.table th, .portalbox_content th {
 	font-weight: bold;
 	white-space: nowrap;
 	text-align: left;
@@ -900,7 +900,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 	background-color: rgba(23, 31, 44, 0.4);
 }
 
-.table th, .table td { /**/
+.table th, .table td { 
 	line-height: 20px;
 	padding: 6px;
 	text-align: left;
@@ -919,14 +919,14 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 }
 
 .table .row1, .portalbox_content .row1, .colorswitch tr:nth-child(even),.colorswitch>td:nth-child(even), .colorswitch > div:nth-child(even){
-	background-color: transparent; /**/
+	background-color: transparent; 
 }
 
 .table .row2,.portalbox_content .row2,.helpline, .colorswitch tr:nth-child(odd),.colorswitch>td:nth-child(odd), .colorswitch > div:nth-child(odd){
-	background-color: transparent; /**/
+	background-color: transparent; 
 }
 
-.table th.footer {/**/
+.table th.footer {
 	font-style: italic;
 	font-weight: normal;
 	text-align: right;
@@ -951,7 +951,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 	-webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.4) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
 }
 
-.contentDivider {/**/
+.contentDivider {
 	border-bottom: 1px solid #3A4E59;
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -964,7 +964,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 	margin-top: 4px;
 }
 
-.rowHover, table tr.marked th, table tr.marked , .hoverrows tr:hover, .hoverrows > div:hover{ /**/
+.rowHover, table tr.marked th, table tr.marked , .hoverrows tr:hover, .hoverrows > div:hover{ 
 	color: rgba(255, 255, 255, 0.8);
 }
 
@@ -1210,10 +1210,10 @@ background-color:#1d1d1d
 background-color: rgba(23, 31, 44, 0.4);
 border-radius: 0;
 }
-
+.ui-widget-content{background-color: rgba(0, 0, 0, 0.05);}
 .ui-widget-overlay { background: rgba(0, 0, 0, 0.8); }
 
-.ui-tabs.ui-widget-content {/**/
+.ui-tabs.ui-widget-content {
 	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
 	background-color: rgba(23, 31, 44, 0.4);
 	border-radius: 0px;
@@ -1445,11 +1445,11 @@ ul.breamcrumb a::before{
 
 ul.breamcrumb a::after{
 	z-index: 2;
-	border-left-color: #082F47;/**/
+	border-left-color: #082F47;
 }
 
 ul.breamcrumb a::before{
-	border-left-color: #082F47;/**/
+	border-left-color: #082F47;
 	right: -1.1em;
 	z-index: 1;
 }
@@ -1511,7 +1511,7 @@ ul.breamcrumb .current::before{
 	border-top-left-radius: 4px;
 }
 
-.article-container {/**/
+.article-container {
 	line-height: 16px;
 }
 
@@ -1525,7 +1525,7 @@ ul.breamcrumb .current::before{
 }
 
 /* ACP: admin menu - update available badge */
-.update_available { /**/
+.update_available { 
 	background-color:#1D1D1D;
 	border: 1.5px solid #B94A48;
 	margin-right: 4px;
@@ -1553,7 +1553,7 @@ ul.breamcrumb .current::before{
 }
 
 /* ACP: admin menu - update available badge */
-.update_available_yellow {/**/
+.update_available_yellow {
 
 	border: 1.5px solid #F89406;
 	margin-right: 4px;
@@ -1968,6 +1968,9 @@ font-size:inherit !important;
 	color: #666;
 	font-size: 16px;
 }
+.article-container.featured {
+	display: block;
+}
 .article-container.featured h2:before {
 	content: "\f005";
 	font-family: FontAwesome;
@@ -2311,7 +2314,7 @@ div.error { display: none; }
 }
 
 /* news */
-.news_author {/**/
+.news_author {
 	margin-top: 4px;
 	margin-bottom: 10px;
 }
@@ -2791,7 +2794,7 @@ ul#mychars-points-tooltip.dropdown-menu li table tbody tr td a {
 	max-height: 16px;
 }
 
-.fe-tooltip-container, .notification-tooltip-container, .user-tooltip-container,.mychars-points-tooltip-container {
+.fe-tooltip-container, .notification-tooltip-container, .user-tooltip-container,.mychars-points-tooltip-container, .langswitch-tooltip-container {
 	display: inline;
 	position: relative;
 }
@@ -2804,7 +2807,7 @@ ul#mychars-points-tooltip.dropdown-menu li table tbody tr td a {
 	min-width: 160px;
 }
 
-.fe-tooltip, .notification-tooltip, .user-tooltip, .mychars-points-tooltip {
+.fe-tooltip, .notification-tooltip, .user-tooltip, .mychars-points-tooltip, .langswitch-tooltip-container {
 	display: none;
 }
 
@@ -3123,7 +3126,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	margin-top: 6px;
 }
 
-.user-groups a {/**/
+.user-groups a {
     background: rgba(0, 0, 0, 0.5) none repeat scroll 0px 0px;
     border-radius: 8px;
     color: rgba(255, 255, 255, 0.7);
@@ -3138,7 +3141,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
     white-space: nowrap;
     line-height: 11px;
 }
-.user-groups a:hover {/**/
+.user-groups a:hover {
     background: rgba(0, 0, 0, 0.8) none repeat scroll 0px 0px;
     color: #FFF;
 }
@@ -3223,7 +3226,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		font-size: 24px;
 	}
 	
-	.responsive .notification-tooltip-container {
+	.responsive .notification-tooltip-container, .responsive .langswitch-tooltip-container {
 		position: static;
 	}
 	
@@ -3550,6 +3553,10 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.responsive .ui-notify {
 		max-width: 95%;
 	}
+	
+	.responsive .langswitch-tooltip-trigger > span {
+		display: none;
+	}
 }
 
 @media all and (max-width: 590px) {
@@ -3791,7 +3798,6 @@ border: 1px solid #E9E718 !important;
 .toggleResponsive {
 	margin-bottom: 6px;
 }
-
 .rte-autocomplete.dropdown-menu {
 	margin-top: 12px;
 	text-align: left;
@@ -3959,12 +3965,13 @@ border-color: transparent #EAEAEA;
  * BATTLENET PROGRESS BAR
  **************************************************/
 /* Steps: 20, 39, 59, 79, 99, 100                */
+.mybars_portal>.portalbox_content>.toggle_container{padding:5px 0px;}
 
 .ui-progressbar {
 	background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.2);
 	border-radius: 2px;
 	border: 1px solid rgba(255, 255, 255, 0.2);
-	margin: 5px -5px 0px;
+	margin: 5px;
 	height: 20px;
 }
 .progressbar_label {
@@ -3976,7 +3983,7 @@ border-color: transparent #EAEAEA;
 
 .ui-progressbar-value{
 	border-radius: 0px;
-	background: #0972A5 url('TEMPLATE_IMAGE_PATH/ui-bg_highlight-hard_20_0972a5_1x100.png") repeat-x scroll 50% 50%;
+	background: #0972A5 url('TEMPLATE_IMAGE_PATH/ui-bg_highlight-hard_20_0972a5_1x100.png') repeat-x scroll 50% 50%;
 	border: 1px solid #26B3F7;
 	box-shadow: 0px 0px 0.6em #25A2EC inset, 0px 0px 0.4em #1497E3 inset, 0px 0px 0.5em rgba(18, 135, 204, 0.5), 0px 0px 0.1em rgba(225, 242, 252, 0.5);
 }
