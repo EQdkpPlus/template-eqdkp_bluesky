@@ -392,23 +392,41 @@ h3 {
 	z-index: 80;
 }
 
-
 #contentBody {
-
 	padding: 1px;
 	margin-bottom: 14px;
 }
 
 #contentBody2 {
-
 	text-align: left;
 }
+
 #contentBody table{
 	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
 	-webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
 	-moz-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
 	background-color: rgba(23, 31, 44, 0.4);
 }
+
+#contentFooter {
+	min-height: 2.5em;
+	line-height: 2.5em;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+#contentFooter a, #contentFooter a:visited, #contentFooter a:hover {
+	color: rgba(255, 255, 255, 0.2);
+	text-decoration: none;
+}
+
+#contentFooter a:hover {
+	color: #FFF;
+}
+#contentFooter .dropdown-menu, #contentFooter .dropdown-menu a{
+	color: #000;
+}
+
 /* general: comment system */
 #htmlCommentTable {
 	background:none;
@@ -464,6 +482,7 @@ div.contentBox {
 .boxContent .comment_link a:hover {
 	text-decoration: underline;
 }
+
 .debug {
 	margin: 5px;
 }
@@ -2719,6 +2738,7 @@ a.tool-item i {
 .dropdown-menu {
 	background-clip: padding-box;
 	background-color: #001629;
+	color: #000;
 	border: 1px solid #3A4E59;
 	border-radius: 6px 6px 6px 6px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -2756,17 +2776,17 @@ a.tool-item i {
 	margin: 9px 1px;
 	overflow: hidden;
 }
-#personalAreaUser ul.dropdown-menu li {
+#personalAreaUser ul.dropdown-menu li, #contentFooter .rss-tooltip.dropdown-menu li {
 	line-height: 14px;
 	float: none;
 	margin-right:0px;
 	color: rgba(255, 255, 255, 0.7);
 }
-#user-tooltip li:hover {
+#user-tooltip li:hover, #contentFooter .rss-tooltip.dropdown-menu li:hover {
 	background-color: rgba(255, 255, 255, 0.15);
 }
 
-#personalArea .dropdown-menu li > a {
+#personalArea .dropdown-menu li > a, #contentFooter .rss-tooltip.dropdown-menu li > a {
 	clear: both;
 	color: rgba(255, 255, 255, 0.7);
 	display: block;
@@ -2775,7 +2795,7 @@ a.tool-item i {
 	padding: 3px 20px;
 	white-space: nowrap;
 }
-#personalArea .dropdown-menu li > a:hover {
+#personalArea .dropdown-menu li > a:hover, #contentFooter .rss-tooltip.dropdown-menu li > a:hover {
 	color: #00C0FF;
 	text-decoration: none;
 }
@@ -2788,7 +2808,7 @@ ul#mychars-points-tooltip.dropdown-menu li table tbody tr td a {
 	max-height: 16px;
 }
 
-.fe-tooltip-container, .notification-tooltip-container, .user-tooltip-container,.mychars-points-tooltip-container, .langswitch-tooltip-container {
+.fe-tooltip-container, .notification-tooltip-container, .user-tooltip-container, .mychars-points-tooltip-container, .langswitch-tooltip-container, .rss-tooltip-container {
 	display: inline;
 	position: relative;
 }
@@ -2801,7 +2821,7 @@ ul#mychars-points-tooltip.dropdown-menu li table tbody tr td a {
 	min-width: 160px;
 }
 
-.fe-tooltip, .notification-tooltip, .user-tooltip, .mychars-points-tooltip, .langswitch-tooltip-container {
+.fe-tooltip, .notification-tooltip, .user-tooltip, .mychars-points-tooltip, .langswitch-tooltip-container, .rss-tooltip {
 	display: none;
 }
 
@@ -2845,6 +2865,44 @@ text-shadow: 0 0.5px 0.5px rgba(0,0,0,1);
 	width: 100%;
 	margin-top: 4px;
 	margin-bottom: 4px;
+}
+
+.dropdown-menu.right-bottom {
+	right: 5px !important;
+	bottom: 30px !important;
+	left: auto;
+	top: auto;
+}
+
+.dropdown-menu.right-bottom:after {
+	border-top: 6px solid #FFFFFF;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: none;
+	content: "";
+	display: inline-block;
+	right: 10px;
+	left: auto;
+	top: auto;
+	position: absolute;
+	bottom: -6px;
+}
+.dropdown-menu.right-bottom:before {
+	border-top: 7px solid rgba(0, 0, 0, 0.2);
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: none;
+	content: "";
+	display: inline-block;
+	right: 9px;
+	left: auto;
+	position: absolute;
+	bottom: -7px;
+	top: auto;
+}
+
+.rss-tooltip-container {
+	margin-left: 10px;
 }
 
 #notification-tooltip-all {
@@ -3303,7 +3361,12 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	}
 	
 	.responsive .ui-dialog {
-		max-width: 95%;
+		max-width: 98%;
+		height: auto !important;
+	}
+
+	.responsive .mce-toolbar[role="menubar"] {
+		display: none;
 	}
 	
 	.responsive:not(.simple-header) .ui-tabs-nav li, .responsive.simple-header.mobile .ui-tabs-nav li {
@@ -3386,7 +3449,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		margin-bottom: 10px;
 	}
 	
-	.responsive div.table {
+	.responsive div.table:not(.noMobileTransform)) {
 		display: table;
 	}
 	
