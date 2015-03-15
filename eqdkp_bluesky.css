@@ -29,8 +29,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -41,7 +41,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -68,7 +68,7 @@ table {
  /* Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome*/
 .fa-inverse{color:#1D1D1D}
 .fa-exclamation-triangle:before{color: #F68506;}
- 
+
  /* icon styles */
 .icon-grey{
 	color:#6E6E6E;
@@ -238,7 +238,7 @@ h3 {
 	margin: 0px 0px 10px 0px;
 }
 /***************************************************
-/* General Portal Layout 
+/* General Portal Layout
  **************************************************/
 .portal .column {
 	vertical-align: top;
@@ -381,7 +381,7 @@ h3 {
 }
 
 #header, #footer {
-	
+
 }
 
 /* Content Container */
@@ -508,7 +508,7 @@ div.contentBox {
 /***************************************************
  * PORTAL
  **************************************************/
-.portalbox { 
+.portalbox {
 	margin: 10px 0px 4px;
 	border: 1px solid #1A0F08;
 	-webkit-box-shadow:  0px 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -516,7 +516,7 @@ div.contentBox {
 	box-shadow:  0px 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-.portalbox_head { 
+.portalbox_head {
 	font-family: 'Trebuchet MS',Arial,sans-serif;
 	padding-right: 3px;
 	font-weight: bold;
@@ -607,7 +607,7 @@ a:hover {
 	color: #FFF;
 	text-decoration: none;
 }
- 
+
 /* Inputs */
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
@@ -642,11 +642,11 @@ input[type=radio], input[type=checkbox]{
 
 .input-icon i {
 	border-radius: 4px 0 0 4px;
-	background-color: #1D1D1D;
-	border: 1px solid #CCCCCC;
+	background-color: #414141;
+	border: 1px solid #565656;
 	line-height: 20px;
 	padding: 4px 8px !important;
-	vertical-align: middle;
+	vertical-align: baseline;
 	font-size: 13px;
 	margin-right: -5px;
 	height: 20px;
@@ -668,7 +668,7 @@ input[type=radio], input[type=checkbox]{
 }
 
 .multilang-dropdown {
-	position: absolute;	
+	position: absolute;
 	background-color: #1d1d1d;
 	border: 1px solid #242415;
 	border-radius: 4px 0px 4px 4px;
@@ -692,10 +692,12 @@ input[type=radio], input[type=checkbox]{
 	margin-right: 2px;
 }
 .input-icon input {
+	border: 1px solid #565656;
 	border-radius: 0 4px 4px 0;
 	margin-left: 0px;
-	height: 20px;
+	height: 28px;
 }
+.input-icon input:focus { background-color: rgba(255, 255, 255, 0.05); }
 
 .input-icon-append i {
 	border-radius: 0 4px 4px 0;
@@ -777,10 +779,10 @@ background: rgba(176, 176, 176, 0.2) none repeat scroll 0% 0%;
 cursor: not-allowed;
 }
 
-/* color styles 
+/* color styles
 ---------------------------------------------- */
 
-/* blue */ 
+/* blue */
 a.blue, a.blue:hover, a.button, a.button:hover {
 	color: #d9eef7;
 	line-height: 15px;
@@ -817,7 +819,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 /* ToDo: they require core changes */
 [class^="bi_"],[class*=" bi_"]{
 	text-indent: 0px;
-	
+
 }
 .bi_compare:before{
 	content: "\f0ec";
@@ -899,7 +901,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 }
 .tr { display: table-row;}
 
-.td { 
+.td {
 	display: table-cell;
 	padding: 2px;
 }
@@ -913,7 +915,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 	background-color: rgba(23, 31, 44, 0.4);
 }
 
-.table th, .table td { 
+.table th, .table td {
 	line-height: 20px;
 	padding: 6px;
 	text-align: left;
@@ -932,11 +934,11 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 }
 
 .table .row1, .portalbox_content .row1, .colorswitch tr:nth-child(even),.colorswitch>td:nth-child(even), .colorswitch > div:nth-child(even){
-	background-color: transparent; 
+	background-color: transparent;
 }
 
 .table .row2,.portalbox_content .row2,.helpline, .colorswitch tr:nth-child(odd),.colorswitch>td:nth-child(odd), .colorswitch > div:nth-child(odd){
-	background-color: transparent; 
+	background-color: transparent;
 }
 
 .table th.footer {
@@ -977,7 +979,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 	margin-top: 4px;
 }
 
-.rowHover, table tr.marked th, table tr.marked , .hoverrows tr:hover, .hoverrows > div:hover{ 
+.rowHover, table tr.marked th, table tr.marked , .hoverrows tr:hover, .hoverrows > div:hover{
 	color: rgba(255, 255, 255, 0.8);
 }
 
@@ -1538,7 +1540,7 @@ ul.breamcrumb .current::before{
 }
 
 /* ACP: admin menu - update available badge */
-.update_available { 
+.update_available {
 	background-color:#1D1D1D;
 	border: 1.5px solid #B94A48;
 	margin-right: 4px;
@@ -1914,7 +1916,7 @@ ul.breamcrumb .current::before{
 }
 
 /* ACP: manage menues */
-.manage_menues_block { 
+.manage_menues_block {
 	list-style-type: none; padding: 3px; margin:6px; border:1px dashed #666; min-width:180px;
 }
 .manage_menues_block2 {
@@ -2015,13 +2017,13 @@ ul.portal_block {
 	min-height: 20px;
 }
 
-.portal_block li { 
+.portal_block li {
 	list-style-type: none;
 	padding: 10px;
 	margin:10px;
 	cursor:pointer;
 }
-.portal_block_light { 
+.portal_block_light {
 	list-style-type: none;
 	padding: 5px;
 	margin:10px;
@@ -2038,7 +2040,7 @@ ul.portal_block {
 /***************************************************
  * CALENDAR
  **************************************************/
- 
+
  /* calendar: global */
 #calendar_loading{
 	border-radius: 10px;
@@ -2168,7 +2170,7 @@ fieldset.raidcal_infos dt, fieldset.moderation_panel dt {
 	font-weight: bold;
 }
 
-table.guesttable { 
+table.guesttable {
 	padding: 5px;
 	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.7) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset;
 	background-color: rgba(23, 31, 44, 0.5);
@@ -2999,7 +3001,7 @@ margin-bottom:50px;
 	list-style:none;
 	margin-top:5px;
 }
-	
+
 .tags li, .tags a{
 	float:left;
 	height:24px;
@@ -3007,7 +3009,7 @@ margin-bottom:50px;
 	position:relative;
 	font-size:11px;
 	}
-	
+
 .tags.small li, .tags.small a {
 	height:20px;
 	line-height:20px;
@@ -3260,15 +3262,15 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 }
 
 .reponsiveTestClass {text-align:right;}
-	
+
 @media all and (max-width: 899px) {
 	body.responsive, html , .responsive #personalArea{
 		font-size: 13px;
 		line-height: 14px;
 	}
-	
+
 	.reponsiveTestClass {text-align:center;}
-	
+
 	.responsive #personalArea {
 		line-height: 22px;
 		font-size: 16px;
@@ -3277,27 +3279,27 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		line-height: 30px;
 		font-size: 24px;
 	}
-	
+
 	.responsive .notification-tooltip-container, .responsive .langswitch-tooltip-container {
 		position: static;
 	}
-	
+
 	.responsive #header {
 		min-height: 10px;
 	}
-	
+
 	.responsive #logoContainer {
 		overflow: visible;
 	}
-	
+
 	.responsive .hiddenSmartphone, .responsive .debug, .responsive .stacktable, .responsive .stackcolumns {
 		display:none;
 	}
-	
+
 	.responsive .hiddenDesktop {
 		display:block;
 	}
-	
+
 	.responsive .mainmenu i {
 		color: #fff;
 		font-size: 23px;
@@ -3305,18 +3307,18 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		line-height: 23px;
 		vertical-align: middle;
 	}
-	
+
 	.responsive #personalArea, .responsive #header, .responsive #footer {
 		padding-right: 10px;
 		padding-left: 10px;
 	}
-	
+
 	.responsive #contentContainer {
 		margin-right: 0px;
 		margin-left: 0px;
 		margin-top: 5px;
 	}
-	
+
 	.responsive #personalAreaUser, .responsive #titles, .responsive #titles h1, .responsive #titles h2, .responsive:not(.simple-header) fieldset.settings dd, .responsive:not(.simple-header) fieldset.settings dt, .responsive.simple-header.mobile fieldset.settings dd, .responsive.simple-header.mobile fieldset.settings dt{
 		display:block;
 		float:none;
@@ -3324,42 +3326,42 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		padding:0px;
 		background:none;
 	}
-	
+
 	.responsive #titles h1 {
 		font-size: 30px;
 		line-height: 30px;
 	}
-	
+
 	.responsive #titles h2 {
 		font-size: 20px;
 		line-height: 18px;
 	}
-	
+
 	.responsive .column {
 		display: block;
 	}
-	
+
 	.responsive .portal .second, .portal .first {
 		padding: 0px;
 	}
-	
+
 	.responsive:not(.simple-header) fieldset.settings dd {
 		border-left: none;
 		margin: 0px;
 		float:none;
 	}
-	
+
 	.responsive:not(.simple-header) fieldset.settings dt {
 		width: 100%;
 		border-right: none;
 		float: none;
 	}
-	
+
 	.responsive:not(.simple-header) fieldset.settings dl:hover dt, .responsive:not(.simple-header) fieldset.settings dl:hover dd, .responsive.simple-header.mobile fieldset.settings dl:hover dt, .responsive.simple-header.mobile fieldset.settings dl:hover dd{
 		border-right: none;
 		border-left: none;
 	}
-	
+
 	.responsive .ui-dialog {
 		max-width: 98%;
 		height: auto !important;
@@ -3368,7 +3370,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.responsive .mce-toolbar[role="menubar"] {
 		display: none;
 	}
-	
+
 	.responsive:not(.simple-header) .ui-tabs-nav li, .responsive.simple-header.mobile .ui-tabs-nav li {
 		float: none;
 		width: 100%;
@@ -3376,44 +3378,44 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		line-heigt: 22px;
 		font-size: 15px;
 	}
-	
+
 	.responsive:not(.simple-header) .ui-tabs-anchor, .responsive.simple-header.mobile .ui-tabs-anchor {
 		display: block;
 	}
-	
+
 	.responsive:not(.simple-header) .settings input[type='text'], .responsive:not(.simple-header) .settings input[type='password'], .responsive:not(.simple-header) .settings select,
 	.responsive.simple-header.mobile .settings input[type='text'], .responsive.simple-header.mobile .settings input[type='password'], .responsive.simple-header.mobile .settings select {
 
 		width: 90% !important;
 	}
-	
+
 	.responsive:not(.simple-header) .ui-tabs .ui-tabs-nav .ui-tabs-anchor, .responsive.simple-header.mobile .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
 
 		float: none;
 	}
-	
+
 	.responsive .breamcrumb li, .responsive .breamcrumb li a:after, .responsive .breamcrumb li a:before {
 		display: none;
 	}
-	
+
 	.responsive .breamcrumb li:first-child, .responsive .breamcrumb li:nth-last-of-type(2) {
 		display: inline;
 	}
-	
+
 	.responsive .breamcrumb li:first-child a {
 		border-right: 1px solid #1D1D1D;
 		padding-right: 8px;
 		padding-left: 8px !important;
 	}
-	
+
 	.responsive .breamcrumb li {
 		font-size: 14px;
 	}
-	
+
 	.responsive .breamcrumb li:nth-last-of-type(2) a {
 		padding-left: 22px;
 	}
-	
+
 	.responsive .breamcrumb li:nth-last-of-type(2) a:before {
 		content:"\f060";
 		display:inline;
@@ -3426,20 +3428,20 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		top: 11px;
 		font-family: "FontAwesome";
 	}
-	
+
 	.responsive .breamcrumb li:first-child a:before {
 		display: none;
 	}
-	
+
 	.responsive .medium, .responsive .button, .responsive input[type="submit"], .responsive input[type="button"],.responsive input[type="reset"], .responsive button, .responsive ui-dialog button {
 		font-size: 14px;
 		padding: .3em 1em .32em;
 	}
-	
+
 	.responsive .contentWidth60, .responsive .contentWidth30 {
 		width: auto;
 	}
-	
+
 	.responsive .contentSideRight {
 		float: none;
 		clear: both;
@@ -3448,20 +3450,20 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		padding: 0;
 		margin-bottom: 10px;
 	}
-	
+
 	.responsive div.table:not(.noMobileTransform)) {
 		display: table;
 	}
-	
+
 	.responsive button.ui-multiselect {
 		width: auto !important;
 	}
-	
+
 	.responsive.simple-header.mobile .floatRight {
 		float: none;
 	}
-	
-	
+
+
 	/* Mobile Navigation */
 	.nav-mobile {
 		background: #45484d; /* Old browsers */
@@ -3475,7 +3477,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		width: 100%;
 		min-height: 3em;
 	}
-	
+
 	.nav-mobile > i {
 		float: right;
 		background-color: #fff;
@@ -3485,7 +3487,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		margin: 4px;
 		font-size: 22px;
 	}
-	
+
 	.nav-mobile-overlay {
 		width: 75%;
 		height: 100%;
@@ -3500,7 +3502,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		border-right: 1px solid #1d1d1d;
 		z-index: 999;
 	}
-	
+
 	.nav-mobile-closebtn {
 		background-color: #039CFF;
 		color: #000;
@@ -3512,67 +3514,67 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		padding: 4px 6px 6px 6px;
 		font-size: 20px;
 	}
-	
+
 	.mainmenu-mobile > li,  .nav-mobile-overlay .admin-headline, .adminmenu-mobile > li {
 		margin-bottom: 24px;
 		font-size: 18px;
 		color: #4E7FA8;
 		font-weight: bold;
 	}
-	
+
 	.mainmenu-mobile > li > ul, .adminmenu-mobile > li > ul {
 		margin-left: 15px;
 		font-weight: normal;
 		font-size: 14px;
 		margin-top: 6px;
 	}
-	
+
 	.mainmenu-mobile > li > ul > li, .mainmenu-mobile > li > ul > li > ul > li, .adminmenu-mobile > li > ul > li, .adminmenu-mobile > li > ul > li > ul > li {
 		margin-bottom: 5px;
 	}
-	
+
 	.mainmenu-mobile > li > ul > li > ul, .adminmenu-mobile > li > ul > li > ul{
 		margin-left: 30px;
 		font-weight: normal;
 		font-size: 15px;
 		margin-top: 6px;
 	}
-	
+
 	.responsive table.scrollable-x {
-		table-layout: fixed;	
+		table-layout: fixed;
 	}
 
 	.responsive table.scrollable-x tbody {
 		display: block;
 		overflow-x: auto;
 	}
-	
+
 	.responsive fieldset.settings {
 		max-width: 100%;
 	}
-	
+
 	.responsive .permissions {
 		float: none;
 		width: 100%;
 	}
-	
+
 	.responsive .ui-notify-close {
 		font-size: 20px;
 	}
-	
+
 	.responsive #mainlogo {
 		max-height: 50px;
 	}
-	
+
 	.responsive .nowrap.desktopOnly{
 		white-space: normal;
 	}
-	
+
 	.responsive #personalAreaUser ul li:last-child{
 		margin-right: 0;
 	}
-	
-	.responsive .comment_avatar_container{ 
+
+	.responsive .comment_avatar_container{
 		display: none;
 	}
 	.responsive .comment_container, .responsive #comment_button, .responsive .reply-trigger, .responsive .reply_button, .responsive .comment_write_container {
@@ -3582,15 +3584,15 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.responsive .user-profile > .user-avatar img {
 		height: 48px;
 	}
-	
+
 	.responsive .comment-reply {
 		margin-left: 30px;
 	}
-	
+
 	.responsive .article_content img:not(.itt-icon):not(.classicon):not(.raceicon):not(.rankicon):not(.talenticon):not(.eventicon):not(.roleicon):not(.gameicon) {
 		width: 100% !important;
 	}
-	
+
 	.responsive .embed-content div iframe {
 	    position: absolute;
 	    top: 0;
@@ -3598,7 +3600,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	    width: 100%;
 	    height: 100%;
 	}
-	
+
 	.responsive .embed-content {
 	  position: relative;
 	  padding-bottom: 67.5%;
@@ -3606,11 +3608,11 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	  margin: 10px 0;
 	  overflow: hidden;
 	}
-	
+
 	.responsive .ui-notify {
 		max-width: 95%;
 	}
-	
+
 	.responsive .langswitch-tooltip-trigger > span {
 		display: none;
 	}
@@ -3630,18 +3632,18 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		margin: 0px;
 		float:none;
 	}
-	
+
 	.responsive fieldset.settings dt {
 		width: 100%;
 		border-right: none;
 		float: none;
 	}
-	
+
 	.responsive fieldset.settings dl:hover dt, .responsive fieldset.settings dl:hover dd{
 		border-right: none;
 		border-left: none;
 	}
-	
+
 	.responsive .ui-tabs-nav li {
 		float: none;
 		width: 100%;
@@ -3649,15 +3651,15 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		line-heigt: 22px;
 		font-size: 15px;
 	}
-	
+
 	.responsive .ui-tabs-anchor {
 		display: block;
 	}
-	
+
 	.responsive .settings input[type='text'], .responsive .settings input[type='password'], .responsive .settings select {
 		width: 90% !important;
 	}
-	
+
 	.responsive .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
 		float: none;
 	}
@@ -3699,7 +3701,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	background-position: 10px center;
 	margin: 10px 0px;
 	display:block;
-	min-height: 32px;	
+	min-height: 32px;
 }
 .errorbox div span, .greenbox div span, .bluebox div span{
 	padding: 0px 0px 0px 0px;
@@ -3765,7 +3767,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 
 .notification-tooltip-container .dropdown-menu {
 	min-width: 300px;
-	
+
 }
 
 #personalAreaUser ul.dropdown-menu li.notification-action-bar{
