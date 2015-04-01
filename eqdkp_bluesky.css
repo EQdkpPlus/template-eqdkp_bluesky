@@ -3863,11 +3863,16 @@ border: 1px solid #E9E718 !important;
 	padding-left: 6px;
 }
 .elfinder .elfinder-navbar {
-	background-color: #131313 !important;
-}
-.jqplot-target{
-color: inherit !important;
-}
+	background-color: #131313 !important;}
+.elfinder-info-title {color: #131313;}
+
+/***************************************************
+/* JQPlot Adjustments
+/**************************************************/
+.jqplot-target{color: inherit !important;}
+
+.jqplot-highlighter-tooltip, .jqplot-canvasOverlay-tooltip{color: rgb(0, 0, 0);}
+
 /***************************************************
 /*Changes for custom tmpl raidacalview
  **************************************************/
@@ -3912,7 +3917,9 @@ color:#E80000
 color:#800080
 }
 
-/*Chat Plugin*/
+/***************************************************
+/*Chat Plugin
+ **************************************************/
 .chatWindow, .chatWindowMenu{
 	background-color:#202020 !important;;
 	border: 1px solid rgba(0, 0, 0, .20);
@@ -3996,13 +4003,18 @@ border-color: transparent #EAEAEA;
  *PortalModule WhoisOnline
  **************************************************/
 .whoisonline_portal .table { box-shadow: none; }
-.whoisonline_portal .portalbox_content .td { padding: 3px 4px; }
+.whoisonline_portal .portalbox_content .td, .whoisonline_portal .portalbox_content { padding: 3px 4px; }
 
 /***************************************************
  *PortalModule Shoutbox
  **************************************************/
 .shoutbox_portal .portalbox_content { padding: 1px 1px 8px; }
 #htmlShoutboxTable .table { box-shadow: none; }
+
+/***************************************************
+ *PortalModule Statistics
+ **************************************************/
+.statistics_portal .table { box-shadow: none; }
 
 /***************************************************
  * FONTS
