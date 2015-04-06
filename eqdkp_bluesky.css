@@ -3830,6 +3830,41 @@ li.prio_2 {
 	border-left: 4px solid #E91823;
 }
 
+button.thirdpartylogin.facebook {
+	background: #3b5998;
+	color: #fff;
+	border-radius: 3px;
+	border-color: transparent;
+}
+
+button.thirdpartylogin.google {
+	background: #dd4b39;
+	color: #fff;
+	border-radius: 3px;
+	border-color: transparent;
+}
+
+button.thirdpartylogin.battlenet {
+	background: #0e98d8;
+	color: #fff;
+	border-radius: 3px;
+	border-color: transparent;
+}
+
+button.thirdpartylogin.persona {
+	background: #448bc9;
+	color: #fff;
+	border-radius: 3px;
+	border-color: transparent;
+}
+
+button.thirdpartylogin.openid {
+	background: #d5d5d5;
+	color: #000;
+	border-radius: 3px;
+	border-color: transparent;
+}
+
 .bubble-green.filtered {
 	border: 1px solid #58E918 !important;
 	background-color: rgba(88, 233, 24, 0.4);
@@ -3837,7 +3872,7 @@ li.prio_2 {
 }
 
 .bubble-yellow.filtered {
-border: 1px solid #E9E718 !important;
+	border: 1px solid #E9E718 !important;
 	background-color: rgba(233, 231, 24, 0.4);
 	background-image: -moz-linear-gradient(center top , rgba(249, 246, 186, 0.4) 0%, rgba(233, 237, 63, 0.4) 50%, rgba(233, 231, 24, 0.4) 50%, rgba(197, 181, 1, 0.4) 100%);
 }
