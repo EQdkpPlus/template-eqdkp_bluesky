@@ -2466,9 +2466,10 @@ div.comment_author {
 	color: #9f9f9f;
 	margin-bottom: 5px;
 	font-size: 11px;
-
 }
-
+.comment_text blockquote {
+	margin-right: 20px;
+}
 #comment_button, .reply-trigger,.reply_button {
 	margin-left: 130px;
 }
