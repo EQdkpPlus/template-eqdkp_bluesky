@@ -1988,7 +1988,7 @@ font-size:inherit !important;
 	color: #666;
 	font-size: 16px;
 }
-.article-container.featured {
+.article-container.featured, .article_detail_container.featured{
 	display: block;
 }
 
@@ -2438,7 +2438,7 @@ div.error { display: none; }
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 	margin-left: 130px;
-	word-break: break-word;
+	word-break: normal;
 }
 
 .comment_container:after, .comment_write_container:after {
