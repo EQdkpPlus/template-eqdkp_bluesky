@@ -706,12 +706,10 @@ input[type=radio], input[type=checkbox]{
 
 .input-icon-append i {
 	border-radius: 0 4px 4px 0;
-	background-color: #14283C;
 	line-height: 20px;
-	padding: 0px 8px !important;
+	padding: 0px 9px !important;
 	vertical-align: middle;
 	font-size: 13px;
-	margin-left: -5px;
 	height: 20px;
 	display: inline-block;
 	margin-top: -3px;
