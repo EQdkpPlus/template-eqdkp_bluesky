@@ -618,7 +618,7 @@ a:hover {
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 	margin-top: 5px;
 	padding: 0px 5px;
-	height: 25px;
+	line-height: 25px;
 	color: #BBB;
 	text-shadow: 1px 1px 1px #000;
 	background: rgba(0, 0, 0, 0.16) none repeat scroll 0% 0%;
