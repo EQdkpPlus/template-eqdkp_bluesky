@@ -4059,6 +4059,9 @@ border-color: transparent #EAEAEA;
  **************************************************/
 .shoutbox_portal .portalbox_content { padding: 1px 1px 8px; }
 #htmlShoutboxTable .table { box-shadow: none; }
+.sb_horizontal .sb_content_container { background-color: rgba(0, 22, 41, 0.7) !important; border-color: #3A4E59 !important; }
+.sb_horizontal .sb_with_avatar.sb_content_container:before { border-color: transparent #3A4E59 !important; }
+.sb_horizontal .sb_with_avatar.sb_content_container:after { border-color: transparent #001A30 !important; }
 
 /***************************************************
  *PortalModule Statistics
