@@ -4008,6 +4008,8 @@ border-bottom:1px solid #000;
 }
 .chatInput { border-color: #878787 }
 .chatInput input, .chatInput textarea {
+	height: 25px;
+	max-height: 25px;
 	color: #FFF;
 	background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0%;
 	outline: 0px none;
