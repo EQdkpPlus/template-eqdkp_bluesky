@@ -18,7 +18,13 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-
+.templateBoxShadow1{    box-shadow: 0px 0px 0px 1px @templateShadowColor1 inset, 0px 0px 0px 2px @templateShadowColor2 inset;
+	-webkit-box-shadow: 0px 0px 0px 1px @templateShadowColor1 inset, 0px 0px 0px 2px @templateShadowColor2 inset;
+	-moz-box-shadow: 0px 0px 0px 1px @templateShadowColor1 inset, 0px 0px 0px 2px @templateShadowColor2 inset;}
+	
+@templateShadowColor1: rgba(0, 0, 0, 0.7);
+@templateShadowColor2: rgba(255, 255, 255, 0.1);
+	
  /* CSS Reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -404,6 +410,31 @@ h3 {
 
 #contentBody2 {
 	text-align: left;
+}
+/* Sidebar */
+.contentSidebar {
+	display: flex;
+	overflow: hidden !important;
+}
+.contentSidebarRight {
+	border-left: 1px solid @eqdkpSidebarBorderColor;
+	background-color: @eqdkpSidebarBackgroundColor;
+	color: @eqdkpSidebarFontColor;
+	padding: 10px;
+}
+
+.contentSidebarLeft {
+	border-right: 1px solid @eqdkpSidebarBorderColor;
+	background-color: @eqdkpSidebarBackgroundColor;
+	color: @eqdkpSidebarFontColor;
+	padding: 10px;
+}
+
+/* Contrast */
+.contentContrast {
+	color: @eqdkpContentContrastColor;
+	background-color: @eqdkpContentContrastBackgroundColor;
+	border-color: @eqdkpContentContrastBorderColor;
 }
 
 #contentBody table{
@@ -1280,7 +1311,10 @@ background: rgba(0, 0, 0, 0.65) !important;
 	color: #FFF;
 	border:1px solid #3F0;
 }
-
+.infobox-opacgrey {
+	background: rgba(0, 0, 0, 0.2);
+	color: #000000;
+}
 /* general: pagination */
 div.pagination li {
 	display: inline;
@@ -2129,6 +2163,71 @@ fieldset.settings.floatRight.raid input[type="text"]{
 	font-size: 13px;
 	font-weight: normal;
 	line-height: 35px;
+}
+#bottommenu_admin, #bottommenu_chars{
+	position: fixed;
+	bottom: 0px;
+	background: rgba(0, 113, 162, 0.5);
+	float: left;
+	width: 70%;
+	z-index: 99;
+	height: 42px;
+	padding: 0px 0 0px 10px;
+	display:none;
+	color:#000;
+	vertical-align:middle;
+	margin:0;
+}
+#bottommenu_chars{
+	height: 70px;
+	clear: both;
+}
+.bottommenu_roundedcorner{
+	border-radius: 0px;
+}
+
+.bottommenu_chars_table {
+	height: 70px;
+	width:100%;
+	box-shadow:none;
+}
+.bottommenu_admin_table {
+	height: 42px;
+	width:100%;
+	box-shadow:none;
+}
+.bottommenu_chars_icons {
+	width:65px;
+}
+.bottommenu_admin_icons {
+	width:48px;
+}
+.bottommenu_chars_note {
+	width:60%;
+}
+.hl_attendee_checked{
+	box-shadow: 0px 0px 3px #0071A2 ;
+	border-color: #0071A2 ;
+}
+.raidcal_buttonrow{
+	vertical-align:middle;
+	width: 100%;
+	margin: 0px 0px 10px 0px;
+}
+.raidcal_buttonrow_left{
+	width: 60%;
+	vertical-align:middle;
+}
+.raidcal_buttonrow_middle{
+	width: 22%;
+	vertical-align:middle;
+}
+.raidcal_buttonrow_right{
+	width: 18%;
+	vertical-align:middle;
+}
+.buttonblock{
+	color:inherit;
 }
 
 #raidcal_signin_form h2 span.toggle_button:before, #toogleRaidcalModeration h2 span.toggle_button:before {
@@ -3477,7 +3576,11 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.responsive.simple-header.mobile .floatRight {
 		float: none;
 	}
-
+	.responsive div.leaderboard > div.floatLeft {
+		float: none;
+		width: 100% !important;
+	}
+	
 
 	/* Mobile Navigation */
 	.nav-mobile {
@@ -3580,7 +3683,10 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.responsive #mainlogo {
 		max-height: 50px;
 	}
-
+	.responsive #titles {
+		float: left;
+		margin-left: 6px;
+	}
 	.responsive .nowrap.desktopOnly{
 		white-space: normal;
 	}
@@ -3630,6 +3736,17 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 
 	.responsive .langswitch-tooltip-trigger > span {
 		display: none;
+	}
+		
+	.responsive .contentSidebar, .responsive .contentSidebarRight, .responsive .contentSidebarLeft {
+		display: block;
+		border: none;
+		background: none;
+	}
+	
+	.responsive .contentSidebarRight, .responsive .contentSidebarLeft {
+		width: auto !important;
+		border-top: 1px solid @eqdkpSidebarBorderColor;
 	}
 }
 
@@ -3915,6 +4032,14 @@ button.thirdpartylogin.openid {
 	background-color: #131313 !important;}
 .elfinder-info-title {color: #131313;}
 
+/* Leaderboard */
+.leaderboard {
+	display: flex;
+	flex-wrap: wrap;
+}
+.leaderboard > div > div{
+	padding: 6px;
+	}
 /***************************************************
 /* JQPlot Adjustments
 /**************************************************/
