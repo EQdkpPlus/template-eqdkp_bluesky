@@ -4057,15 +4057,15 @@ button.thirdpartylogin.openid {
 	padding-top: 6px;
 	padding-left: 4px;
 	padding-right: 4px;
-	border-bottom: 1px solid #ccc;
+/*	border-bottom: 1px solid #333;*/
 }
 
 .notification_list li.unread {
-	background-color: #EAEAEA;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .notification_list li:first-child{
-	border-top: 1px solid #ccc;
+	/*border-top: 1px solid #333;*/
 }
 .toggleResponsive {
 	margin-bottom: 6px;
