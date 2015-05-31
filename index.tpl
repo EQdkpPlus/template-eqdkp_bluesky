@@ -126,6 +126,7 @@
 				//5 Minute
 				window.setTimeout("notification_update()", 1000*60*5);
 			}
+
 			function change_style(){
 				$('<div>').html('<div class="style-switch-container"><i class="fa fa-lg fa-spin fa-spinner"></i></div>').dialog(
 					{ open: function( event, ui ) {
@@ -268,6 +269,7 @@
 					<ul>
 						<li><a href="{EQDKP_CONTROLLER_PATH}Login{SEO_EXTENSION}{SID}" class="openLoginModal" onclick="return false;"><i class="fa fa-sign-in fa-lg"></i> {L_login}</a></li>
 						<!-- IF U_REGISTER != "" --><li>{U_REGISTER}</li><!-- ENDIF -->
+						
 						<li>
 							<div class="langswitch-tooltip-container">
 								<a href="#" class="langswitch-tooltip-trigger tooltip-trigger" data-tooltip="langswitch-tooltip">{USER_LANGUAGE_NAME}</a>
@@ -278,6 +280,7 @@
 								</ul>
 							</div>
 						</li>
+						
 						<!-- BEGIN personal_area_addition -->
 						<li>{personal_area_addition.TEXT}</li>
 						<!-- END personal_area_addition -->
@@ -287,7 +290,7 @@
 						<ul>
 							<li>
 								<div class="user-tooltip-container">
-									<a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}" class="user-tooltip-trigger tooltip-trigger" data-tooltip="user-tooltip"><span class="user-avatar user-avatar-border user-avatar-smallest"><img src="{USER_AVATAR}" alt="{USER_NAME}"/></span> <span class="hiddenSmartphone">{USER_NAME}</span></a>
+									<a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}" class="user-tooltip-trigger tooltip-trigger" data-tooltip="user-tooltip"><span class="user-avatar user-avatar-border user-avatar-smallest"><img src="{USER_AVATAR}" alt="{USER_NAME}"/></span> <span class="hiddenSmartphone">{USER_NAME}<!-- IF USER_IS_AWAY --> <i class="fa fa-suitcase fa-lg"></i><!-- ENDIF --></span></a>
 									<ul class="dropdown-menu user-tooltip" role="menu" id="user-tooltip">
 										<li><a href="{U_USER_PROFILE}">
 												<div class="user-tooltip-avatar">
@@ -303,6 +306,9 @@
 										<!-- BEGIN user_tooltip_addition -->
 										<li class="{user_tooltip_addition.CLASS}">{user_tooltip_addition.TEXT}</li>
 										<!-- END user_tooltip_addition -->
+										<!-- IF USER_IS_AWAY -->
+										<li class="user_tooltip_awaymode"><a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}#fragment-calendar"><i class="fa fa-suitcase fa-lg"></i> {L_calendar_user_is_away}</a></li>
+										<!-- ENDIF -->
 										<li><a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}"><i class="fa fa-cog fa-lg"></i> {L_settings}</a></li>
 										<li><a href="{U_LOGOUT}"><i class="fa fa-sign-out fa-lg"></i> {L_logout}</a></li>
 									</ul>
@@ -405,10 +411,10 @@
 							<h1>{MAIN_TITLE}</h1><br />
 							<h2>{SUB_TITLE}</h2>
 					</hgroup><!-- close titles-->
-					<!-- LISTENER logo_container -->				
+					<!-- LISTENER logo_container -->
 					<div class="clear noheight">&nbsp;</div>
 				</div>
-				{PORTAL_BLOCK1}
+				<div class="portal_block1">{PORTAL_BLOCK1}</div>
 				<!-- LISTENER header_bottom -->
 			</div> <!-- close header-->
 		</header>
@@ -493,7 +499,7 @@
 									<!-- LISTENER content_body_top -->
 									{GBL_CONTENT_BODY}
 									<!-- LISTENER content_body_bottom -->
-								</div>		
+								</div>	
 							</div><!-- close contentBody -->
 							<!-- LISTENER content_middle_bottom -->
 							
@@ -563,9 +569,8 @@
 		
 		<footer id="footer">
 				<!-- LISTENER footer_top -->
-				{PORTAL_BLOCK2}
+				<div class="portal_block1">{PORTAL_BLOCK2}</div>
 				{EQDKP_PLUS_COPYRIGHT}
-				{TEMPLATE_GAME_COPYRIGHT}
 				<!-- LISTENER footer_bottom -->
 		</footer><!-- close footer -->
 	</div><!-- close wrapper -->

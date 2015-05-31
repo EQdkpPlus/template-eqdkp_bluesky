@@ -1,22 +1,22 @@
-/* Project: EQdkp-Plus
-* Package: The Secret World Template Package - Style Argatha
-* Link: http://eqdkp-plus.eu
-*
-* Copyright (C) 2006-2015 EQdkp-Plus Developer Team
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Affero General Public License as published
-* by the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU Affero General Public License for more details.
-*
-* You should have received a copy of the GNU Affero General Public License
-* along with this program. If not, see <http://www.gnu.org/licenses/>.
-*/
+/*	Project:	EQdkp-Plus
+ *	Package:	EQdkp-plus
+ *	Link:		http://eqdkp-plus.eu
+ *
+ *	Copyright (C) 2006-2015 EQdkp-Plus Developer Team
+ *
+ *	This program is free software: you can redistribute it and/or modify
+ *	it under the terms of the GNU Affero General Public License as published
+ *	by the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *
+ *	This program is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU Affero General Public License for more details.
+ *
+ *	You should have received a copy of the GNU Affero General Public License
+ *	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 .templateBoxShadow1{    box-shadow: 0px 0px 0px 1px @templateShadowColor1 inset, 0px 0px 0px 2px @templateShadowColor2 inset;
 	-webkit-box-shadow: 0px 0px 0px 1px @templateShadowColor1 inset, 0px 0px 0px 2px @templateShadowColor2 inset;
@@ -629,6 +629,10 @@ div.contentBox {
 
 .mainmenu {
 	font-size: 14px;
+}
+
+ul.mainmenu > li {
+	float: left;
 }
 
 ul.mainmenu li a.link_indexphp:before, ul.mainmenu li a.link_entry_home:before {
@@ -1446,6 +1450,7 @@ ul.breamcrumb {
 	border-color: #54B6F0;
 	border-radius: 0px;
 	overflow: hidden;
+	float:left;
 	width: 100%;
 	transition: opacity 0.2s ease 0s, width 0.8s ease-out 0s, background-color 1s ease 0s, border-color 0.3s ease 0s, box-shadow 1s ease 0s;
 	animation: 6s ease-in 0s normal none 10 running pulse;
@@ -2181,6 +2186,9 @@ fieldset.settings.floatRight.raid input[type="text"]{
 	vertical-align:middle;
 	margin:0;
 }
+.attendee_awaymode{
+	background-color: rgba(255, 0, 0, 0.15);
+}
 #bottommenu_chars{
 	height: 70px;
 	clear: both;
@@ -2769,7 +2777,9 @@ td.hiddenSmartphone, th.hiddenSmartphone {
 	/* background-color: #FFFFFF;
 	border: 1px solid #CCCCCC; */
 }
-
+.awaytt_row{
+	margin: 8px 0px;
+}
 /* Toolbar */
 .toolbar {
 	cursor: pointer;
@@ -2934,7 +2944,8 @@ a.tool-item i {
 	background-color: rgba(255, 255, 255, 0.15);
 }
 
-#personalArea .dropdown-menu li > a, #contentFooter .rss-tooltip.dropdown-menu li > a {
+#personalArea .dropdown-menu li > a, .rss-tooltip.dropdown-menu li > a, #personalArea .dropdown-menu li > span.nolink {
+
 	clear: both;
 	color: rgba(255, 255, 255, 0.7);
 	display: block;
@@ -2952,6 +2963,9 @@ ul#mychars-points-tooltip.dropdown-menu li table tbody tr td a {
 	color: #333;
 }
 
+.user_tooltip_awaymode span.nolink {
+	color: red !important;
+}
 .mychars-points-target img {
 	max-height: 16px;
 }
