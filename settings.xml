@@ -40,13 +40,15 @@
 	<portal_width>0px</portal_width>
 	<column_right_width>0px</column_right_width>
 	<column_left_width>0px</column_left_width>
-	<sidebar_background_color>rgb(234, 234, 234)</sidebar_background_color>
+	<sidebar_background_color>rgba(234, 234, 234, 0.3)</sidebar_background_color>
 	<sidebar_font_color>rgb(0, 0, 0)</sidebar_font_color>
 	<sidebar_border_color>rgb(204, 204, 204)</sidebar_border_color>
 	<content_contrast_color>rgb(0, 0, 0)</content_contrast_color>
-	<content_contrast_background_color>rgb(252, 253, 254)</content_contrast_background_color>
+	<content_contrast_background_color>rgba(252, 253, 254, 0.1)</content_contrast_background_color>
 	<content_contrast_border_color>rgb(204, 204, 204)</content_contrast_border_color>
 	<content_positive_color>rgb(51, 204, 51)</content_positive_color>
 	<content_negative_color>rgb(226, 59, 48)</content_negative_color>
 	<content_neutral_color>rgb(153, 153, 153)</content_neutral_color>
+	<content_highlight_color>rgba(255, 255, 255, 1)</content_highlight_color>
+
 </settings>
