@@ -560,6 +560,7 @@ div.contentBox {
 	padding-right: 3px;
 	font-weight: bold;
 	line-height: 28px;
+	font-weight: bold;
 }
 
 .portalbox_content {
@@ -3755,7 +3756,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		margin-left: 30px;
 	}
 
-	.responsive .article_content img:not(.itt-icon):not(.classicon):not(.raceicon):not(.rankicon):not(.talenticon):not(.eventicon):not(.roleicon):not(.gameicon) {
+	.responsive .article_content img:not(.itt-icon):not(.classicon):not(.raceicon):not(.rankicon):not(.talenticon):not(.eventicon):not(.roleicon):not(.gameicon):not(.smilies):not(.eqdkpicon) {
 		width: 100% !important;
 	}
 
