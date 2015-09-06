@@ -560,6 +560,7 @@ div.contentBox {
 	padding-right: 3px;
 	font-weight: bold;
 	line-height: 28px;
+	font-weight: bold;
 }
 
 .portalbox_content {
@@ -715,9 +716,10 @@ input[type=radio], input[type=checkbox]{
 	background-color: #1d1d1d;
 	border: 1px solid #242415;
 	border-radius: 4px 0px 4px 4px;
-	margin-top: -4px;
+	margin-top: 5px;
 	padding: 4px 8px 0px 8px !important;
 	display: none;
+	z-index: 20;
 }
 
 .input-multilang.textarea .multilang-dropdown {
@@ -3012,10 +3014,8 @@ text-shadow: 0 0.5px 0.5px rgba(0,0,0,1);
 }
 .user-tooltip-avatar img {
 	height: 40px;
-	max-widht: 60px;
+	max-width: 60px;
 	border-radius: 4px 4px 4px 4px;
-	/* border: 1px solid #CCCCCC;
-	background-color: #FFFFFF; */
 }
 .user-tooltip-name {
 	padding-right: 40px;
@@ -3535,7 +3535,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		float: none;
 		width: 100%;
 		height: 30px;
-		line-heigt: 22px;
+		line-height: 22px;
 		font-size: 15px;
 	}
 
@@ -3741,7 +3741,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		margin-right: 0;
 	}
 
-	.responsive .comment_avatar_container{
+	.responsive .comment_avatar_container, .responsive .comment_write_container::after, .responsive .comment_write_container::before, .comment_container::after, .comment_container::before{
 		display: none;
 	}
 	.responsive .comment_container, .responsive #comment_button, .responsive .reply-trigger, .responsive .reply_button, .responsive .comment_write_container {
@@ -3756,7 +3756,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		margin-left: 30px;
 	}
 
-	.responsive .article_content img:not(.itt-icon):not(.classicon):not(.raceicon):not(.rankicon):not(.talenticon):not(.eventicon):not(.roleicon):not(.gameicon) {
+	.responsive .article_content img:not(.itt-icon):not(.classicon):not(.raceicon):not(.rankicon):not(.talenticon):not(.eventicon):not(.roleicon):not(.gameicon):not(.smilies):not(.eqdkpicon) {
 		width: 100% !important;
 	}
 
@@ -3798,6 +3798,10 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.responsive #personalAreaUser .user-avatar-smallest>img {
 		margin-top: 4px;
 	}
+	.responsive .first.column, .responsive .third.column {
+		min-width: 1% !important;
+		max-width: 100% !important;
+	}
 }
 
 @media all and (max-width: 590px) {
@@ -3830,7 +3834,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		float: none;
 		width: 100%;
 		height: 30px;
-		line-heigt: 22px;
+		line-height: 22px;
 		font-size: 15px;
 	}
 
