@@ -2188,7 +2188,7 @@ table.guesttable {
 table.guesttable td{
 /*	color:black;*/
 }
-}
+
 .style1 {
 	text-align: center;
 }
@@ -2740,7 +2740,7 @@ a.tool-item i {
 	top: -6px;
 }
 .dropdown-menu:before {
-	border-bottom: 7px solid #3A4E59);
+	border-bottom: 7px solid #3A4E59;
 	border-left: 7px solid transparent;
 	border-right: 7px solid transparent;
 	content: "";
@@ -3466,7 +3466,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		margin-bottom: 10px;
 	}
 
-	.responsive div.table:not(.noMobileTransform)) {
+	.responsive div.table:not(.noMobileTransform) {
 		display: table;
 	}
 
@@ -3770,7 +3770,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 .simple-header .ui-dialog {
 	max-width: 90%;
 }
-}
+
 
 /*new Notification mod Rev 14824*/
 #personalArea .dropdown-menu {
