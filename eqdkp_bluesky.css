@@ -4086,6 +4086,20 @@ button.thirdpartylogin.openid {
 	background-image: -moz-linear-gradient(center top , rgba(249, 186, 189, 0.4) 0%, rgba(237, 63, 72, 0.4) 50%, rgba(233, 24, 34, 0.4) 50%, rgba(197, 1, 4, 0.4) 100%);
 }
 
+.bubble {
+  background-color: @eqdkpContentHighlightColor;
+  border-radius: 9px;
+  color: @eqdkpContentBackgroundColor;
+  display: inline-block;
+  font-size: .85rem;
+  padding: 1px 6px 1px;
+  position: relative;
+  text-shadow: none !important;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
 .notification_list li{
 	padding-bottom: 6px;
 	padding-top: 6px;
