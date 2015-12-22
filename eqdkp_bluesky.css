@@ -4165,7 +4165,7 @@ td .bigDateTd{
 }
 .articleMonth{
 	font-family: "Neverwinter";	
-	font-size: 2.5em;
+	font-size: 2.3em;
 }
 .middleDateNumber {
 	font-size: 30px;
@@ -4205,7 +4205,7 @@ td .bigDateTd{
 /***************************************************
 /* Ribbons 
  **************************************************/
-@ribbon: @eqdkpContentFontColorHeadings;
+@ribbon:lighten(@eqdkpSidebarBackgroundColor,20);
 @featuredColor: gold;
 
 .ribbon {
@@ -4225,10 +4225,10 @@ td .bigDateTd{
 	padding: .75em 1.25em .75em .75em;
 	margin-left:-0.5em;
 	background-color: @ribbon;
-	background-image: linear-gradient(-90deg, lighten(@ribbon,20%) 0%, @ribbon 100%);
+	background-image: linear-gradient(-90deg, lighten(fadein(@ribbon,20),20%) 0%, fadein(@ribbon,100) 100%);
 	box-shadow: inset 0 .062em 0 rgba(255,255,255,.6), 0 .125em .25em rgba(0,0,0,.2);
 	color: @eqdkpContentBackgroundColor;
-	box-shadow: 0px 0px 16px  rba(0,0,0,.3);
+	box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
 	 text-transform: uppercase;
 	text-shadow: 0 -.062em 0 rgba(0,0,0,.2);
 	width: 90%;
@@ -4251,7 +4251,7 @@ td .bigDateTd{
 	width: .5em;
 	height: 3em;
 	border-radius: 0.5em 0 0 .5em;
-	background-image: linear-gradient(to right, darken(@ribbon,1%) 0%, @ribbon 100%);
+	background-image: linear-gradient(to right, darken(fadein(@ribbon,100),1%) 0%, fadein(@ribbon,20) 100%);
 }
 .ribbon span:after {
   content: '';
@@ -4266,7 +4266,7 @@ td .bigDateTd{
 	width: .5em;
 	height: 1em;
 	border-radius: .5em 0 0 .5em;
-	background-image: linear-gradient(to right, darken(desaturate(@ribbon,100),10) 0%, darken(desaturate(@ribbon,80),30) 100%);
+	background-image: linear-gradient(to right, darken(fadein(@ribbon,100),10) 0%, darken(fadein(@ribbon,80),30) 100%);
 	box-shadow: 0 .062em 0 rgba(255,255,255,.6);
 
 }
@@ -4290,7 +4290,7 @@ td .bigDateTd{
   white-space: nowrap;
   background-color: @eqdkpContentContrastBackgroundColor;
   border: 1px solid @eqdkpContentContrastBorderColor;
-  border-radius: 5px;
+  border-radius: 0px;
   color: @eqdkpContentContrastColor;
   margin: 5px;
 }
@@ -4532,4 +4532,22 @@ border-color: transparent #EAEAEA;
 	background: #0972A5 url('TEMPLATE_IMAGE_PATH/ui-bg_highlight-hard_20_0972a5_1x100.png') repeat-x scroll 50% 50%;
 	border: 1px solid #26B3F7;
 	box-shadow: 0px 0px 0.6em #25A2EC inset, 0px 0px 0.4em #1497E3 inset, 0px 0px 0.5em rgba(18, 135, 204, 0.5), 0px 0px 0.1em rgba(225, 242, 252, 0.5);
+}
+/***************************************************
+ * Pluggin MediaCenter
+ **************************************************/
+ .contentContrast .badge,.contentSidebar .badge{
+	color: darken(@eqdkpContentContrastColor,80%);
+}
+.mcStatisticBox, .mcCategoriesBox{
+	border-radius:0px;
+	border: 1px solid rgba(0,0,0,.4)
+}
+.contentContrast{
+background-color: @eqdkpContentContrastBackgroundColor;
+box-shadow: 0 0 0 1px rgba(0,0,0,.7) inset,0px 0 0 2px rgba(255,255,255,.1) inset;
+transition: box-shadow .2s ease-in-out 0s;
+padding: 0;
+display: block;
+position: relative;
 }
