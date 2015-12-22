@@ -2051,8 +2051,7 @@ font-size:inherit !important;
 	display: none;
 }
 
-.article-container.featured h2:before, .article_detail_container.featured h1.contentTitle:before {
-	content: "\f005";
+.article-container.featured header > h2:before, .article_detail_container.featured h1.contentTitle:before {	content: "\f005";
 	font-family: FontAwesome;
 	color: gold;
 	font-size: 16px;
