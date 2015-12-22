@@ -4167,7 +4167,25 @@ td .bigDateTd{
 	font-family: "Neverwinter";	
 	font-size: 2.5em;
 }
+.middleDateNumber {
+	font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: 100;
+	width: 100%;
+    display: block;
+}
 
+.middleDateTime {
+	font-size: 25px;
+    line-height: 25px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: 100;
+	width: 100%;
+    display: block;
+}
 .list-type1 .td.bigDateTd, .list-type3 .td.bigDateTd {
 	width: 100px;
 }
@@ -4184,58 +4202,123 @@ td .bigDateTd{
 	margin-left: 10px;
 }
 
-/* Ribbons */
+/***************************************************
+/* Ribbons 
+ **************************************************/
+@ribbon: @eqdkpContentFontColorHeadings;
+@featuredColor: @gold;
 
-.article_content {
-  position: relative;
-}
-
-@ribbon: @eqdkpContentHighlightColor;
 .ribbon {
-  position: absolute;
-  right: -5px; top: -5px;
-  z-index: 1;
-  overflow: hidden;
-  width: 75px; height: 75px;
-  text-align: right;
-	& span {
-	  font-size: 10px;
-	  font-weight: bold;
-	  color: @eqdkpContentBackgroundColor;
-	  text-transform: uppercase;
-	  text-align: center;
-	  line-height: 20px;
-	  height: 20px;
-	  transform: rotate(45deg);
-	  width: 100px;
-	  display: block;
-	  background: @ribbon;
-	  background: linear-gradient(lighten(@ribbon,20%) 0%, @ribbon 100%);
-	  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-	  position: absolute;
-	  top: 19px; right: -21px;
-		&::before {
-			content: "";
-		  position: absolute; left: 0px; top: 100%;
-		  z-index: -1;
-		  border-left: 3px solid @ribbon;
-		  border-right: 3px solid transparent;
-		  border-bottom: 3px solid transparent;
-		border-top: 3px solid @ribbon;	}
-		&::after {
-		  content: "";
-		  position: absolute; right: 0px; top: 100%;
-		  z-index: -1;
-		  border-left: 3px solid transparent;
-		  border-right: 3px solid @ribbon;
-		  border-bottom: 3px solid transparent;
-		  border-top: 3px solid @ribbon;	}
-	}
+	margin: 3px;
+    margin-left: -18px;
+	width:98%;
+	margin-top: 6px;
+	margin-bottom: 6px;
 }
-@featuredColor: gold;
+.ribbon span {
+  	position: relative;
+	display: block;	
+	text-align: center;
+	bottom: 0em;
+	left: 0;
+	margin-right: 0.2em;
+	padding: .75em 1.25em .75em .75em;
+	margin-left:-0.5em;
+	background-color: @ribbon;
+	background-image: linear-gradient(-90deg, lighten(@ribbon,20%) 0%, @ribbon 100%);
+	box-shadow: inset 0 .062em 0 rgba(255,255,255,.6), 0 .125em .25em rgba(0,0,0,.2);
+	color: @eqdkpContentBackgroundColor;
+	box-shadow: 0px 0px 16px  @templateTextShadow;
+	 text-transform: uppercase;
+	text-shadow: 0 -.062em 0 rgba(0,0,0,.2);
+	width: 90%;
+	text-align: center;
+	display: block;
+	border-radius: 0 0 0 .5em;
+	word-wrap: break-word;
+}
+
+.ribbon span:before {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+
+.ribbon span:before {
+	top: -1em;
+	left: 0em;
+	width: .5em;
+	height: 3em;
+	border-radius: 0.5em 0 0 .5em;
+	background-image: linear-gradient(to right, darken(@ribbon,1%) 0%, @ribbon 100%);
+}
+.ribbon span:after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+
+.ribbon span:after {
+	top: -1em;
+	left: 0em;
+	width: .5em;
+	height: 1em;
+	border-radius: .5em 0 0 .5em;
+	background-image: linear-gradient(to right, darken(desaturate(@ribbon,100),10) 0%, darken(desaturate(@ribbon,80),30) 100%);
+	box-shadow: 0 .062em 0 rgba(255,255,255,.6);
+
+}
 .featured .ribbon > span {
-	background: linear-gradient(lighten(@featuredColor,20%) 0%, @featuredColor 100%);
+	background: linear-gradient(-90deg, lighten(@featuredColor,20%) 0%, @featuredColor 100%);
 	color: black;
+}
+
+.featured .ribbon > span:before {
+	border-bottom-color: @featuredColor;
+	background-image: linear-gradient(to right, darken(@featuredColor,1%) 0%, @featuredColor 100%);
+}
+.featured .ribbon > span:after {
+	background-image: linear-gradient(to right, darken(@featuredColor,10%) 0%, darken(@featuredColor,30%) 100%);
+}
+/* Article Boxes for Calendarentries */
+.articleCalendarEventBox {
+  display: inline-block;
+  max-width: 500px;
+  padding: 11px 14px;
+  white-space: nowrap;
+  background-color: @eqdkpContentContrastBackgroundColor;
+  border: 1px solid @eqdkpContentContrastBorderColor;
+  border-radius: 5px;
+  color: @eqdkpContentContrastColor;
+  margin: 5px;
+}
+
+.articleCalendarEventBox .bigDateContainer {
+	float: left;
+	border-right-color: @eqdkpContentContrastBorderColor;
+}
+
+.articleCalendarEventBox .bigDateNumber {
+	font-size: 35px;
+	line-height: 35px;
+	margin-bottom: 5px;
+}
+.articleCalendarEventBox .green, .articleCalendarEventBox .orange, .articleCalendarEventBox .red, .articleCalendarEventBox .green:hover, .articleCalendarEventBox .orange:hover, .articleCalendarEventBox .red:hover {
+	background: none !important;
+	border: none !important;
+}
+.articleCalendarEventBox .green, .articleCalendarEventBox .green:hover {
+	color: green !important;;
+}
+
+.articleCalendarEventBox .orange, .articleCalendarEventBox .orange:hover {
+	color: orange !important;;
+}
+
+.articleCalendarEventBox .red, .articleCalendarEventBox .red:hover {
+	color: red !important;;
 }
 /***************************************************
 /* JQPlot Adjustments
