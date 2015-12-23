@@ -950,6 +950,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 }
 .table.fullwidth {
 	width: 100%;
+	box-shadow: none !important;
 }
 .tr { display: table-row;}
 
@@ -4294,9 +4295,10 @@ td .bigDateTd{
   color: @eqdkpContentContrastColor;
   margin: 5px;
 }
-
+.articleCalendarEventBoxContent{
+	padding-left:15px;
+}
 .articleCalendarEventBox .bigDateContainer {
-	float: left;
 	border-right-color: @eqdkpContentContrastBorderColor;
 }
 
@@ -4319,6 +4321,9 @@ td .bigDateTd{
 
 .articleCalendarEventBox .red, .articleCalendarEventBox .red:hover {
 	color: red !important;;
+}
+.qtip-content.ui-widget-content {
+	border-radius: 3px;
 }
 /***************************************************
 /* JQPlot Adjustments
@@ -4551,3 +4556,17 @@ padding: 0;
 display: block;
 position: relative;
 }
+/***************************************************
+ *Plugin Feedposter
+ **************************************************/
+.feedposter.feedtype_rss blockquote{
+	background-color: @eqdkpSidebarBackgroundColor !important;
+}
+blockquote{
+	border-radius: 0px;
+}
+.feedposter.feedtype_rss blockquote{
+	border-color: @eqdkpSidebarBorderColor !important;
+	color: @eqdkpSidebarBorderColor !important;
+}
+.feedposter.feedtype_rss blockquote::before{color: @eqdkpSidebarBorderColor !important;}
