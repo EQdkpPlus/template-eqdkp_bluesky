@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<settings styleversion="0.0.7">	
+<settings styleversion="0.0.8">	
 	<template_path>eqdkp_bluesky</template_path>
 	<body_background>#0e0e0e</body_background>
 	<body_link>#FFCF02</body_link>
@@ -40,12 +40,12 @@
 	<portal_width>0px</portal_width>
 	<column_right_width>0px</column_right_width>
 	<column_left_width>0px</column_left_width>
-	<sidebar_background_color>rgba(234, 234, 234, 0.3)</sidebar_background_color>
-	<sidebar_font_color>rgb(0, 0, 0)</sidebar_font_color>
-	<sidebar_border_color>rgb(204, 204, 204)</sidebar_border_color>
-	<content_contrast_color>rgb(0, 0, 0)</content_contrast_color>
-	<content_contrast_background_color>rgba(252, 253, 254, 0.1)</content_contrast_background_color>
-	<content_contrast_border_color>rgb(204, 204, 204)</content_contrast_border_color>
+	<sidebar_background_color>rgba(23,31,44,.4)</sidebar_background_color>
+	<sidebar_font_color>rgb(197, 229, 255)</sidebar_font_color>
+	<sidebar_border_color>rgba(84, 182, 240, 1)</sidebar_border_color>
+	<content_contrast_color>rgb(197, 229, 255)</content_contrast_color>
+	<content_contrast_background_color>rgba(23,31,44,.4)</content_contrast_background_color>
+	<content_contrast_border_color>rgba(0,0,0,.4)</content_contrast_border_color>
 	<content_positive_color>rgb(51, 204, 51)</content_positive_color>
 	<content_negative_color>rgb(226, 59, 48)</content_negative_color>
 	<content_neutral_color>rgb(153, 153, 153)</content_neutral_color>
