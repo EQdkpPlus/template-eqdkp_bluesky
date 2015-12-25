@@ -27,6 +27,15 @@
 	<table_border_width>1</table_border_width>
 	<table_border_color>#999999</table_border_color>
 	<table_border_style>solid</table_border_style>
+	
+	<table_th_background_color>rgba(0, 0, 0, 0.65)</table_th_background_color>
+	<table_th_font_color>rgb(159, 159, 159)</table_th_font_color>
+	<table_tr_font_color>rgb(159, 159, 159)</table_tr_font_color>
+	<table_tr_background_color1>rgba(125, 125, 125,0)</table_tr_background_color1>
+	<table_tr_background_color2>rgba(125, 125, 125,0.55)</table_tr_background_color2>
+	<table_tr_background_color_hover>rgba(0, 0, 0,0.4)</table_tr_background_color_hover>
+	
+	<table_border_color>rgb(41, 35, 35)</table_border_color>
 	<input_color>#292323</input_color>
 	<input_border_width>1</input_border_width>
 	<input_border_color>#F7992B</input_border_color>
