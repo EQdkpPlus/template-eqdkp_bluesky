@@ -52,7 +52,11 @@
 	<sidebar_background_color>rgba(23,31,44,.4)</sidebar_background_color>
 	<sidebar_font_color>rgb(197, 229, 255)</sidebar_font_color>
 	<sidebar_border_color>rgba(84, 182, 240, 1)</sidebar_border_color>
+	<content_background_color>rgba(23,31,44,.4)</content_background_color>
 	<content_contrast_color>rgb(197, 229, 255)</content_contrast_color>
+	<content_link_color>rgba(197, 229, 255, 1);</content_link_color>
+	<content_link_color_hover>rgba(255, 255, 255, 1)</content_link_color_hover>
+	<content_border_color>rgba(26, 15, 8, 1)</content_border_color>
 	<content_contrast_background_color>rgba(23,31,44,.4)</content_contrast_background_color>
 	<content_contrast_border_color>rgba(0,0,0,.4)</content_contrast_border_color>
 	<content_positive_color>rgb(51, 204, 51)</content_positive_color>
