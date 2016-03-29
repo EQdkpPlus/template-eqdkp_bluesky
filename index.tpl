@@ -67,7 +67,8 @@
 								<div class="user-tooltip-container">
 									<a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}" class="user-tooltip-trigger tooltip-trigger" data-tooltip="user-tooltip"><span class="user-avatar user-avatar-border user-avatar-smallest"><img src="{USER_AVATAR}" alt="{USER_NAME}"/></span> <span class="hiddenSmartphone">{USER_NAME}<!-- IF USER_IS_AWAY --> <i class="fa fa-suitcase fa-lg"></i><!-- ENDIF --></span></a>
 									<ul class="dropdown-menu user-tooltip" role="menu" id="user-tooltip">
-										<li><a href="{U_USER_PROFILE}">
+									<li>
+										<a href="{U_USER_PROFILE}">
 												<div class="user-tooltip-avatar">
 													<img src="{USER_AVATAR}" alt="{USER_NAME}"/>
 												</div>
@@ -89,7 +90,21 @@
 									</ul>
 								</div>
 							</li>
-							<!-- IF S_ADMIN --><li><a href="{EQDKP_ROOT_PATH}admin/{SID}"><i class="fa fa-cog fa-lg"></i> <span class="hiddenSmartphone">{L_menu_admin_panel}</span></a></li><!-- ENDIF -->
+						<!-- IF S_ADMIN -->
+						<li>
+							<div class="admin-tooltip-container">
+								<a href="{EQDKP_ROOT_PATH}admin/{SID}" class="admin-tooltip-trigger tooltip-trigger" data-tooltip="admin-tooltip"><i class="fa fa-cog fa-lg"></i> <span class="hiddenSmartphone">{L_menu_admin_panel}</span></a>
+								<ul class="dropdown-menu admin-tooltip" role="menu" id="admin-tooltip">
+									<li><a href="{EQDKP_ROOT_PATH}admin/{SID}"><i class="fa fa-cog fa-lg"></i> {L_menu_admin_panel}</a></li>
+									<li class="tooltip-divider"></li>
+									<div class="nav-header floatLeft">{L_favorits}</div>
+									<div class="nav-header floatRight hand" title="{L_settings}"><i class="fa fa-cog fa-lg" onclick="window.location='{EQDKP_ROOT_PATH}admin/manage_menus.php{SID}&tab=1'"></i></div>
+									<!-- BEGIN admin_tooltip -->
+									<li><a href="{EQDKP_ROOT_PATH}{admin_tooltip.LINK}"><i class="fa {admin_tooltip.ICON} fa-lg"></i> {admin_tooltip.TEXT}</a></li>
+									<!-- END admin_tooltip -->
+								</ul>
+							</div>	
+							<!-- ENDIF -->
 							
 							<!-- IF U_CHARACTERS != "" --><li><a href="{U_CHARACTERS}"><i class="fa fa-group fa-lg"></i> <span class="hiddenSmartphone">{L_menu_members}</span></a></li><!-- ENDIF -->
 							
@@ -115,7 +130,7 @@
 							
 							<li>
 								<div class="notification-tooltip-container">
-									<a class="notification-tooltip-trigger"><i class="fa fa-bolt fa-lg"></i> <span class="hiddenSmartphone">{L_notifications}</span></a>
+									<a class="notification-tooltip-trigger"><i class="fa fa-bell fa-lg"></i> <span class="hiddenSmartphone">{L_notifications}</span></a>
 									<span class="notification-tooltip-trigger bubble-red notification-bubble-red hand" <!-- IF NOTIFICATION_COUNT_RED == 0 -->style="display:none;"<!-- ENDIF --> >{NOTIFICATION_COUNT_RED}</span>
 									<span class="notification-tooltip-trigger bubble-yellow notification-bubble-yellow hand" <!-- IF NOTIFICATION_COUNT_YELLOW == 0 -->style="display:none;"<!-- ENDIF -->>{NOTIFICATION_COUNT_YELLOW}</span>
 									<span class="notification-tooltip-trigger bubble-green notification-bubble-green hand" <!-- IF NOTIFICATION_COUNT_GREEN == 0 -->style="display:none;"<!-- ENDIF -->>{NOTIFICATION_COUNT_GREEN}</span>
