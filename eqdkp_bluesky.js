@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	if(mmocms_header_type == 'full'){		
+	if(mmocms_header_type == 'full'){
 		/* My Chars Points */
 		$('.mychars-points-tooltip .char').on('click', function(){
 			$(this).parent().parent().children('tr').removeClass("active");
@@ -26,12 +26,6 @@ $(document).ready(function(){
 		
 		/* Main Menu */
 		$('ul.mainmenu li.link_li_indexphp a.link_indexphp, ul.mainmenu li.link_li_entry_home a.link_entry_home').html('');
-		$('ul.mainmenu').addClass('sf-menu');
-		jQuery('ul.mainmenu').superfish({
-				delay:		400,
-				animation:	{opacity:'show',height:'show'},
-				speed:		'fast'
-		});
 		
 		/* Tooltip Triggers */
 		$('.tooltip-trigger').on('click', function(event){
@@ -51,7 +45,13 @@ $(document).ready(function(){
 			$("#user-tooltip").hide('fast');
 			window.location=mmocms_controller_path+"Settings"+mmocms_seo_extension+mmocms_sid;
 		});
-		
+
+		/* Admin Tooltip Doubleclick */
+		$('.admin-tooltip-trigger').on('dblclick', function(event){
+			$("#admin-tooltip").hide('fast');
+			window.location=mmocms_root_path+"admin"+mmocms_sid;
+		});
+
 		user_clock();
 		
 		$( ".openLoginModal" ).on('click', function() {
@@ -108,7 +108,7 @@ $(document).ready(function(){
 })
 
 /* User clock */
-function user_clock(){	
+function user_clock(){
 	var mydate = mymoment.format(user_clock_format);
 	$('.user_time').html(mydate);
 	mymoment.add(1, 's');
@@ -149,7 +149,7 @@ function notification_show_only(name){
 	}
 }
 
-function notification_update(){			
+function notification_update(){
 	$.get(mmocms_controller_path+"Notifications"+mmocms_seo_extension+mmocms_sid+"&load", function(data){
 		$('.notification-content ul').html(data);
 		recalculate_notification_bubbles();
