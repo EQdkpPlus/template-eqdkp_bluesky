@@ -336,7 +336,7 @@ h3 {
 }
 
 #header {
-	background: transparent url('TEMPLATE_IMAGE_PATH/background.jpg') no-repeat fixed center 0px !important;
+	background: transparent url('@{eqdkpBannerImage}') no-repeat fixed center 0px !important;
 	display:block;
 	width: 100%;
 	text-align:center;
@@ -1344,7 +1344,7 @@ fieldset.settings dt {
 	float: left;
 	width: auto;
 }
-fieldset.settings dd + dd {
+fieldset.settings dd  dd {
 	padding-top: 5px;
 }
 fieldset.settings dt {
@@ -1907,11 +1907,11 @@ ul.breamcrumb .current::before{
 	vertical-align: baseline;
 	white-space: nowrap;
 	background: #fff0bf; /* Old browsers */
-	background: -moz-linear-gradient(top, #fff0bf 0%, #ffd651 50%, #ffcd1c 50%, #fcad1b 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff0bf), color-stop(50%,#ffd651), color-stop(50%,#ffcd1c), color-stop(100%,#fcad1b)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #fff0bf 0%,#ffd651 50%,#ffcd1c 50%,#fcad1b 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #fff0bf 0%,#ffd651 50%,#ffcd1c 50%,#fcad1b 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #fff0bf 0%,#ffd651 50%,#ffcd1c 50%,#fcad1b 100%); /* IE10+ */
+	background: -moz-linear-gradient(top, #fff0bf 0%, #ffd651 50%, #ffcd1c 50%, #fcad1b 100%); /* FF3.6 */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff0bf), color-stop(50%,#ffd651), color-stop(50%,#ffcd1c), color-stop(100%,#fcad1b)); /* Chrome,Safari4 */
+	background: -webkit-linear-gradient(top, #fff0bf 0%,#ffd651 50%,#ffcd1c 50%,#fcad1b 100%); /* Chrome10,Safari5.1 */
+	background: -o-linear-gradient(top, #fff0bf 0%,#ffd651 50%,#ffcd1c 50%,#fcad1b 100%); /* Opera 11.10 */
+	background: -ms-linear-gradient(top, #fff0bf 0%,#ffd651 50%,#ffcd1c 50%,#fcad1b 100%); /* IE10 */
 	background: linear-gradient(to bottom, #fff0bf 0%,#ffd651 50%,#ffcd1c 50%,#fcad1b 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff0bf', endColorstr='#fcad1b',GradientType=0 ); /* IE6-9 */
 	box-shadow: 0 .25em .4em rgba(0,0,0,.33);
@@ -2134,7 +2134,7 @@ ul.portal_block {
 .style input[type="radio"] {
 	opacity: 0;
 }
-.style input[type="radio"] + label {
+.style input[type="radio"]  label {
 	display: block;
 	width: 16px;
 	height: 16px;
@@ -2147,7 +2147,7 @@ ul.portal_block {
 	cursor: pointer;
 	z-index: 1;
 }
-.style input[type="radio"] + label:hover:before {
+.style input[type="radio"]  label:hover:before {
 	content: '';
 	width: 10px;
 	height: 10px;
@@ -2157,7 +2157,7 @@ ul.portal_block {
 	border-radius: 1px;
 	background: @eqdkpButtonBackgroundColorHover;
 }
-.style input[type="radio"]:checked + label:before {
+.style input[type="radio"]:checked  label:before {
 	content: '';
 	width: 10px;
 	height: 10px;
@@ -2453,6 +2453,13 @@ a.attendee_Link{
 }
 a.attendee_Link:hover{
 	text-decoration: underline;
+}
+ .raidcal_warningbox table {
+	/*border: 2px solid #edc9ce !important;*/
+}
+.raidcal_warningbox table th {
+	background-color: #6003;
+	color: red;
 }
 
 /* calendar: raidevent view - Not signed in Members Bar */
@@ -3788,11 +3795,11 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	/* Mobile Navigation */
 	.nav-mobile {
 		background: #45484d; /* Old browsers */
-		background: -moz-linear-gradient(top, #45484d 0%, #000000 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top, #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, #45484d 0%,#000000 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top, #45484d 0%,#000000 100%); /* IE10+ */
+		background: -moz-linear-gradient(top, #45484d 0%, #000000 100%); /* FF3.6 */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4 */
+		background: -webkit-linear-gradient(top, #45484d 0%,#000000 100%); /* Chrome10,Safari5.1 */
+		background: -o-linear-gradient(top, #45484d 0%,#000000 100%); /* Opera 11.10 */
+		background: -ms-linear-gradient(top, #45484d 0%,#000000 100%); /* IE10 */
 		background: linear-gradient(to bottom, #45484d 0%,#000000 100%); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 		width: 100%;
@@ -3915,6 +3922,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 
 	.responsive .article_content img:not(.itt-icon):not(.classicon):not(.raceicon):not(.rankicon):not(.talenticon):not(.eventicon):not(.roleicon):not(.gameicon):not(.smilies):not(.eqdkpicon) {
 		width: 100% !important;
+		height: auto !important;
 	}
 
 	.responsive .embed-content div iframe {
@@ -4690,12 +4698,12 @@ border-color: transparent #EAEAEA;
 	border: 1px solid rgba(0,0,0,.4)
 }
 .contentContrast{
-background-color: @eqdkpContentContrastBackgroundColor;
-box-shadow: 0 0 0 1px rgba(0,0,0,.7) inset,0px 0 0 2px rgba(255,255,255,.1) inset;
-transition: box-shadow .2s ease-in-out 0s;
-padding: 0;
-display: block;
-position: relative;
+	background-color: @eqdkpContentContrastBackgroundColor;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.7) inset,0px 0 0 2px rgba(255,255,255,.1) inset;
+	transition: box-shadow .2s ease-in-out 0s;
+	padding: 0;
+	display: block;
+	position: relative;
 }
 /***************************************************
  *Plugin Feedposter
@@ -4731,7 +4739,6 @@ label.isBoolean > .red, label.isBoolean > .green {
         vertical-align: middle;
         background: @eqdkpInputBackgroundColor;
         border: 1px solid @eqdkpInputBorderColor;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
         font-family: Tahoma,Arial,Verdana,sans-serif;
         margin: 0px;
 		box-shadow: 0 1px 4px rgba(0,0,0,.3) inset,0px 1px rgba(255,255,255,.06);
@@ -4758,6 +4765,6 @@ label.isBoolean > input[type="radio"]:checked + span.red, label.isBoolean > span
 
 label.isBoolean > input[type="radio"]:checked + span.green, label.isBoolean > span.green:hover, label.isBoolean > span.green:active {
         background: @styleBooleanGreen !important;
-        color: @eqdkpInputFontColor!important;
+        color: @eqdkpInputFontColor !important;
 }
 /* End Boolean Boxes */
