@@ -1505,7 +1505,7 @@ div[aria-describedby="dialog-login"] .password-forgot{
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
-	padding-bottom:0px !important;
+	padding-bottom:1px !important;
 }
 
 .ui-helper-reset{
