@@ -1456,7 +1456,8 @@ hr#system-readmore {
 	display:none;
 }
 
-ul.breadcrumb {
+ul.breadcrumb,
+ul.breamcrumb {
 	color: #00C0FF;
 	font-size: 13px;
 	border-width: 1px;
@@ -1472,13 +1473,15 @@ ul.breadcrumb {
 	box-shadow: 0px 0px 0.6em #25A2EC inset, 0px 0px 0.4em #1497E3 inset, 0px 0px 0.5em rgba(18, 135, 204, 0.5), 0px 0px 0.1em rgba(225, 242, 252, 0.5);
 }
 
-ul.breadcrumb li {
+ul.breadcrumb li,
+ul.breamcrumb li {
 	float: left;
 	position: relative;
 	border-right: 1px solid #082F47;
 	}
 
-ul.breadcrumb a {
+ul.breadcrumb a,
+ul.breamcrumb a {
 	padding: 1em 1em 1em 2em;
 	display: block;
 	text-decoration: none;
@@ -1489,23 +1492,28 @@ ul.breadcrumb a {
 	background-image: linear-gradient(to right, rgba(37, 162, 236, 0.8), #082F47);
 }
 
-ul.breadcrumb li:first-child a{
+ul.breadcrumb li:first-child a,
+ul.breamcrumb li:first-child a {
 	margin-bottom: -4px;
 	margin-top: -3px;
 	padding-left: 1em;
 }
 
-ul.breadcrumb li:first-child a i {
+ul.breadcrumb li:first-child a i,
+ul.breamcrumb li:first-child a i {
 	font-size: 1.5em;
 }
 
-ul.breadcrumb a:hover{
+ul.breadcrumb a:hover,
+ul.breamcrumb a:hover {
 	background-color: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;
 	background-image: linear-gradient(to right, #082F47, #082F47);
 }
 
 ul.breadcrumb a::after,
-ul.breadcrumb a::before{
+ul.breamcrumb a::after,
+ul.breadcrumb a::before,
+ul.breamcrumb a::before {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -1517,36 +1525,45 @@ ul.breadcrumb a::before{
 ;
 }
 
-ul.breadcrumb a::after{
+ul.breadcrumb a::after,
+ul.breamcrumb a::after {
 	z-index: 2;
 	border-left-color: #082F47;
 }
 
-ul.breadcrumb a::before{
+ul.breadcrumb a::before,
+ul.breamcrumb a::before {
 	border-left-color: #082F47;
 	right: -1.1em;
 	z-index: 1;
 }
-ul.breadcrumb a:hover::before{
+ul.breadcrumb a:hover::before,
+ul.breamcrumb a:hover::before {
 	border-left-color: #082F47;
 }
-ul.breadcrumb a:hover::after{
+ul.breadcrumb a:hover::after,
+ul.breamcrumb a:hover::after {
 	border-left-color: #082F47;
 
 }
 
 ul.breadcrumb .current,
-ul.breadcrumb .current:hover{
+ul.breamcrumb .current,
+ul.breadcrumb .current:hover,
+ul.breamcrumb .current:hover {
 	font-weight: bold;
 	background: none;
 }
 
 ul.breadcrumb .current::after,
-ul.breadcrumb .current::before{
+ul.breamcrumb .current::after,
+ul.breadcrumb .current::before,
+ul.breamcrumb .current::before {
 	content: normal;
 }
 
-.breadcrumb-container {
+.breadcrumb-container,
+.breamcrumb-container {
 	margin-bottom: 8px;
 }
 
@@ -3692,29 +3709,41 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		float: none;
 	}
 
-	.responsive .breadcrumb li, .responsive .breadcrumb li a:after, .responsive .breadcrumb li a:before {
+	.responsive .breadcrumb li,
+	.responsive .breamcrumb li,
+	.responsive .breadcrumb li a:after,
+	.responsive .breamcrumb li a:after,
+	.responsive .breadcrumb li a:before,
+	.responsive .breamcrumb li a:before {
 		display: none;
 	}
 
-	.responsive .breadcrumb li:first-child, .responsive .breadcrumb li:nth-last-of-type(2) {
+	.responsive .breadcrumb li:first-child,
+	.responsive .breamcrumb li:first-child,
+	.responsive .breadcrumb li:nth-last-of-type(2),
+	.responsive .breamcrumb li:nth-last-of-type(2) {
 		display: inline;
 	}
 
-	.responsive .breadcrumb li:first-child a {
+	.responsive .breadcrumb li:first-child a,
+	.responsive .breamcrumb li:first-child a {
 		border-right: 1px solid #1D1D1D;
 		padding-right: 8px;
 		padding-left: 8px !important;
 	}
 
-	.responsive .breadcrumb li {
+	.responsive .breadcrumb li,
+	.responsive .breamcrumb li {
 		font-size: 14px;
 	}
 
-	.responsive .breadcrumb li:nth-last-of-type(2) a {
+	.responsive .breadcrumb li:nth-last-of-type(2) a,
+	.responsive .breamcrumb li:nth-last-of-type(2) a {
 		padding-left: 22px;
 	}
 
-	.responsive .breadcrumb li:nth-last-of-type(2) a:before {
+	.responsive .breadcrumb li:nth-last-of-type(2) a:before,
+	.responsive .breamcrumb li:nth-last-of-type(2) a:before {
 		content:"\f060";
 		display:inline;
 		border: none;
@@ -3727,7 +3756,8 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		font-family: "FontAwesome";
 	}
 
-	.responsive .breadcrumb li:first-child a:before {
+	.responsive .breadcrumb li:first-child a:before,
+	.responsive .breamcrumb li:first-child a:before {
 		display: none;
 	}
 
@@ -3939,7 +3969,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.responsive .first.column, .responsive .third.column {
 		min-width: 1% !important;
 		max-width: 100% !important;
-	}	
+	}
 	.responsive .bigDateTd {
 		display: none;
 	}
@@ -4287,7 +4317,7 @@ td .bigDateTd{
 	position: relative;
 }
 .articleMonth{
-	font-family: "Neverwinter";	
+	font-family: "Neverwinter";
 	font-size: 2.3em;
 }
 .middleDateNumber {
@@ -4326,7 +4356,7 @@ td .bigDateTd{
 }
 
 /***************************************************
-/* Ribbons 
+/* Ribbons
  **************************************************/
 @ribbon:lighten(@eqdkpSidebarBackgroundColor,20);
 @featuredColor: gold;
@@ -4340,7 +4370,7 @@ td .bigDateTd{
 }
 .ribbon span {
   	position: relative;
-	display: block;	
+	display: block;
 	text-align: center;
 	bottom: 0em;
 	left: 0;
