@@ -2,7 +2,7 @@
  *	Package:	EQdkp-plus
  *	Link:		http://eqdkp-plus.eu
  *
- *	Copyright (C) 2006-2015 EQdkp-Plus Developer Team
+ *	Copyright (C) 2006-2016 EQdkp-Plus Developer Team
  *
  *	This program is free software: you can redistribute it and/or modify
  *	it under the terms of the GNU Affero General Public License as published
@@ -38,7 +38,9 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video,
+table.table, .table caption, .table tbody, .table tfoot, .table thead, .table tr, .table th, .table td,
+ {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -562,6 +564,13 @@ div.contentBox {
 	line-height: 28px;
 	font-weight: bold;
 }
+.portalbox_head .portal_fe_edit {
+	display: none;
+}
+
+.portalbox:hover .portal_fe_edit {
+	display: inline;
+}
 
 .portalbox_content {
 	white-space: normal;
@@ -941,6 +950,7 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 }
 .table.fullwidth {
 	width: 100%;
+	box-shadow: none !important;
 }
 .tr { display: table-row;}
 
@@ -1384,52 +1394,52 @@ div.pagination {
 
 /* Article Sitemap */
 .articleSitemap, .categoryChildSitemap {
-	border-color: #DDDDDD;
-	border-image: none;
-	border-style: solid;
-	border-width: 1px 1px 1px 1px;
 	text-decoration: none;
-	background-color: #fff;
+	background-color: @eqdkpContentBackgroundColor;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,.3);
 	line-height: 20px;
 	margin-left: 10px;
 	margin-bottom: 10px;
 	float: right;
-	border-radius: 4px;
+	border-radius: 0px;
 	min-width: 150px;
+	line-height: 16px;
+	transition: all 0.3s ease 0s;
 }
 
 .articleSitemap li, .categoryChildSitemap li {
 	padding: 6px 12px;
-	border-bottom: 1px solid #DDDDDD;
+	border-bottom: 1px solid #000;
+
 }
 
 .articleSitemap li:last-child, .categoryChildSitemap li:last-child {
 	border: none;
-	border-bottom-right-radius: 4px;
-	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
 }
 
 .articleSitemap li:first-child, .categoryChildSitemap li:first-child {
-	border-top-right-radius: 4px;
-	border-top-left-radius: 4px;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
 }
 
 .articleSitemap li.active {
-	background-color: #F7F7F9;
+	background-color: rgba(255, 255, 255, 0.1);
 	cursor: default;
 }
 
 .articleSitemap li.active a {
-	color: #999999;
+	color: #c5e5ff;
 }
 
 .articleSitemap li:hover, .categoryChildSitemap li:hover {
-	background-color: #F7F7F9;
+	background-color: rgba(255, 255, 255, 0.1);
 	cursor: default;
 }
 
 .articleSitemap li:hover a, .categoryChildSitemap li:hover a {
-	color: #000;
+	color: #00c0ff;
 }
 .article_detail_container header, .article-container header{
 	padding: 5px 10px;
@@ -1438,12 +1448,15 @@ div.pagination {
 	box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-
+.noheader .categoryChildSitemap {
+	float: none;
+}
 
 hr#system-readmore {
 	display:none;
 }
 
+ul.breadcrumb,
 ul.breamcrumb {
 	color: #00C0FF;
 	font-size: 13px;
@@ -1460,12 +1473,14 @@ ul.breamcrumb {
 	box-shadow: 0px 0px 0.6em #25A2EC inset, 0px 0px 0.4em #1497E3 inset, 0px 0px 0.5em rgba(18, 135, 204, 0.5), 0px 0px 0.1em rgba(225, 242, 252, 0.5);
 }
 
+ul.breadcrumb li,
 ul.breamcrumb li {
 	float: left;
 	position: relative;
 	border-right: 1px solid #082F47;
 	}
 
+ul.breadcrumb a,
 ul.breamcrumb a {
 	padding: 1em 1em 1em 2em;
 	display: block;
@@ -1477,23 +1492,28 @@ ul.breamcrumb a {
 	background-image: linear-gradient(to right, rgba(37, 162, 236, 0.8), #082F47);
 }
 
-ul.breamcrumb li:first-child a{
+ul.breadcrumb li:first-child a,
+ul.breamcrumb li:first-child a {
 	margin-bottom: -4px;
 	margin-top: -3px;
 	padding-left: 1em;
 }
 
+ul.breadcrumb li:first-child a i,
 ul.breamcrumb li:first-child a i {
 	font-size: 1.5em;
 }
 
-ul.breamcrumb a:hover{
+ul.breadcrumb a:hover,
+ul.breamcrumb a:hover {
 	background-color: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;
 	background-image: linear-gradient(to right, #082F47, #082F47);
 }
 
+ul.breadcrumb a::after,
 ul.breamcrumb a::after,
-ul.breamcrumb a::before{
+ul.breadcrumb a::before,
+ul.breamcrumb a::before {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -1505,36 +1525,45 @@ ul.breamcrumb a::before{
 ;
 }
 
-ul.breamcrumb a::after{
+ul.breadcrumb a::after,
+ul.breamcrumb a::after {
 	z-index: 2;
 	border-left-color: #082F47;
 }
 
-ul.breamcrumb a::before{
+ul.breadcrumb a::before,
+ul.breamcrumb a::before {
 	border-left-color: #082F47;
 	right: -1.1em;
 	z-index: 1;
 }
-ul.breamcrumb a:hover::before{
+ul.breadcrumb a:hover::before,
+ul.breamcrumb a:hover::before {
 	border-left-color: #082F47;
 }
-ul.breamcrumb a:hover::after{
+ul.breadcrumb a:hover::after,
+ul.breamcrumb a:hover::after {
 	border-left-color: #082F47;
 
 }
 
+ul.breadcrumb .current,
 ul.breamcrumb .current,
-ul.breamcrumb .current:hover{
+ul.breadcrumb .current:hover,
+ul.breamcrumb .current:hover {
 	font-weight: bold;
 	background: none;
 }
 
+ul.breadcrumb .current::after,
 ul.breamcrumb .current::after,
-ul.breamcrumb .current::before{
+ul.breadcrumb .current::before,
+ul.breamcrumb .current::before {
 	content: normal;
 }
 
-.breadcrumb-container {
+.breadcrumb-container,
+.breamcrumb-container {
 	margin-bottom: 8px;
 }
 
@@ -2040,8 +2069,7 @@ font-size:inherit !important;
 	display: none;
 }
 
-.article-container.featured h2:before, .article_detail_container.featured h1.contentTitle:before {
-	content: "\f005";
+.article-container.featured header > h2:before, .article_detail_container.featured h1.contentTitle:before {	content: "\f005";
 	font-family: FontAwesome;
 	color: gold;
 	font-size: 16px;
@@ -2075,7 +2103,7 @@ ul.portal_block {
 	list-style-type: none;
 	padding: 10px;
 	margin:10px;
-	cursor:pointer;
+	cursor:move;
 }
 .portal_block_light {
 	list-style-type: none;
@@ -2089,6 +2117,129 @@ ul.portal_block {
 .permissions {
 	width: 50%;
 	float: left;
+}
+/* ACP: styles management */
+.style {
+	width: 300px;
+	height: 200px;
+	margin: 5px;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	background: @eqdkpTableTrBackgroundColor2;
+	border: 1px solid @eqdkpTableBorderColor;
+}
+.style-preview {
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	filter: brightness(.5);
+	transition: .5s ease-in-out;
+	z-index: 0;
+	background-size: cover;
+  	background-position: center;
+}
+.style:hover .style-preview {
+	filter: brightness(1);
+}
+
+.style input[type="radio"] {
+	opacity: 0;
+}
+.style input[type="radio"] + label {
+	display: block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	border: 1px solid @eqdkpButtonBorderColor;
+	border-radius: 3px;
+	background: @eqdkpTableTrFontColor;
+	cursor: pointer;
+	z-index: 1;
+}
+.style input[type="radio"] + label:hover:before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	border-radius: 1px;
+	background: @eqdkpButtonBackgroundColorHover;
+}
+.style input[type="radio"]:checked + label:before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	border-radius: 1px;
+	background: @eqdkpButtonBackgroundColor;
+}
+
+.style-action {
+	opacity: 1;
+	width: 100%;
+	padding: 3px 7px;
+	position: relative;
+	top: 0;
+	left: 0;
+	background-color: darken(fadein(@eqdkpTableTrBackgroundColor1, 50%),50);
+	z-index: 1;
+	display: inline-block;
+	text-align: right;
+	padding: 3px 0px 3px 0px;
+	min-height: 17px;
+}
+
+.styles-container .style-action a {
+	color: @eqdkpTableTrFontColor !important;
+}
+
+.style-info {
+	width: 300px;
+	position: absolute;
+	bottom: -34px;
+	background-color: darken(fadein(@eqdkpTableTrBackgroundColor1, 50%),50);
+	transition: bottom .3s ease-in;
+	z-index: 1;
+	padding-top: 2px;
+}
+.style-info:hover {
+	bottom: 0;
+}
+.style-info h2 {
+	margin: 0 15px;
+}
+.style-info table {
+	margin: 5px 10px;
+}
+.style-info td {
+	padding-right: 15px;
+}
+
+.style-checkbox {
+	float: left;
+}
+
+.style_red, .style_red_local {
+	border-color: #E80000; /* color from .icon-color-red, defined at eqdkpplus.css */
+}
+
+.style_yellow {
+	border-color: #e9ec00; /* color from .icon-color-yellow, defined at eqdkpplus.css */
+}
+.style-version {
+	float: right;
+	font-size: @eqdkpBodyFontSize;
+	padding-top: 3px;
 }
 
 /***************************************************
@@ -2353,7 +2504,9 @@ span.group_selector {
 	top: -8px;
 	left: -14px;
 }
-
+.tooltiprow{
+	min-height: 24px;
+}
 #memberScroller{
 	height: 300px;
 	overflow:auto;
@@ -2388,6 +2541,9 @@ span.group_selector {
 .charchange_menucontainer{
 	background-color:#466988;
 	overflow: hidden;
+}
+.eventdata-details div{
+	margin: 8px 0px;
 }
 /***************************************************
  * GENERAL: game specific
@@ -3419,7 +3575,6 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		font-size: 13px;
 		line-height: 14px;
 	}
-
 	.reponsiveTestClass {text-align:center;}
 
 	.responsive #personalArea {
@@ -3545,28 +3700,40 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		float: none;
 	}
 
-	.responsive .breamcrumb li, .responsive .breamcrumb li a:after, .responsive .breamcrumb li a:before {
+	.responsive .breadcrumb li,
+	.responsive .breamcrumb li,
+	.responsive .breadcrumb li a:after,
+	.responsive .breamcrumb li a:after,
+	.responsive .breadcrumb li a:before,
+	.responsive .breamcrumb li a:before {
 		display: none;
 	}
 
-	.responsive .breamcrumb li:first-child, .responsive .breamcrumb li:nth-last-of-type(2) {
+	.responsive .breadcrumb li:first-child,
+	.responsive .breamcrumb li:first-child,
+	.responsive .breadcrumb li:nth-last-of-type(2),
+	.responsive .breamcrumb li:nth-last-of-type(2) {
 		display: inline;
 	}
 
+	.responsive .breadcrumb li:first-child a,
 	.responsive .breamcrumb li:first-child a {
 		border-right: 1px solid #1D1D1D;
 		padding-right: 8px;
 		padding-left: 8px !important;
 	}
 
+	.responsive .breadcrumb li,
 	.responsive .breamcrumb li {
 		font-size: 14px;
 	}
 
+	.responsive .breadcrumb li:nth-last-of-type(2) a,
 	.responsive .breamcrumb li:nth-last-of-type(2) a {
 		padding-left: 22px;
 	}
 
+	.responsive .breadcrumb li:nth-last-of-type(2) a:before,
 	.responsive .breamcrumb li:nth-last-of-type(2) a:before {
 		content:"\f060";
 		display:inline;
@@ -3580,6 +3747,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		font-family: "FontAwesome";
 	}
 
+	.responsive .breadcrumb li:first-child a:before,
 	.responsive .breamcrumb li:first-child a:before {
 		display: none;
 	}
@@ -3793,6 +3961,9 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		min-width: 1% !important;
 		max-width: 100% !important;
 	}
+	.responsive .bigDateTd {
+		display: none;
+	}
 }
 
 @media all and (max-width: 590px) {
@@ -3851,6 +4022,10 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 
 	.responsive #personalAreaUser ul li {
 		margin-right: 10px;
+	}
+		
+	.list-type1 .ribbons, .list-type2 .ribbons, .list-type3 .ribbons  {
+		display: none;
 	}
 }
 
@@ -4061,12 +4236,25 @@ button.thirdpartylogin.openid {
 	background-image: -moz-linear-gradient(center top , rgba(249, 186, 189, 0.4) 0%, rgba(237, 63, 72, 0.4) 50%, rgba(233, 24, 34, 0.4) 50%, rgba(197, 1, 4, 0.4) 100%);
 }
 
+.bubble {
+  background-color: @eqdkpContentHighlightColor;
+  border-radius: 9px;
+  color: @eqdkpContentBackgroundColor;
+  display: inline-block;
+  font-size: .70rem;
+  padding: 1px 6px 1px;
+  position: relative;
+  text-shadow: none !important;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
 .notification_list li{
 	padding-bottom: 6px;
 	padding-top: 6px;
 	padding-left: 4px;
 	padding-right: 4px;
-/*	border-bottom: 1px solid #333;*/
 }
 
 .notification_list li.unread {
@@ -4095,7 +4283,191 @@ button.thirdpartylogin.openid {
 }
 .leaderboard > div > div{
 	padding: 6px;
-	}
+}
+
+/* Big Dates for Article List */
+.bigDateNumber {
+	font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 10px;
+    font-weight: 100;
+	width: 100%;
+    display: block;
+}
+td .bigDateTd{
+    border: 1px solid #1A0F08;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+    background-color: rgba(23, 31, 44, 0.4);
+}
+.bigDateContainer {
+	text-align: center;
+	width: 100px;
+	margin-left: 2px;
+	margin-right: 10px;
+	display: block;
+	position: relative;
+}
+.articleMonth{
+	font-family: "Neverwinter";
+	font-size: 2.3em;
+}
+.middleDateNumber {
+	font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: 100;
+	width: 100%;
+    display: block;
+}
+
+.middleDateTime {
+	font-size: 25px;
+    line-height: 25px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: 100;
+	width: 100%;
+    display: block;
+}
+.list-type1 .td.bigDateTd, .list-type3 .td.bigDateTd {
+	width: 100px;
+}
+
+.list-type1 .td, .list-type2 .td, .list-type3 .td {
+	vertical-align: top;
+}
+
+.list-type2 h2 {
+	border-bottom: none;
+}
+
+.list-type2 .fa-calendar-o, .list-type2 .fa-comments, .list-type2 .fa-folder-o {
+	margin-left: 10px;
+}
+
+/***************************************************
+/* Ribbons
+ **************************************************/
+@ribbon:lighten(@eqdkpSidebarBackgroundColor,20);
+@featuredColor: gold;
+
+.ribbon {
+	margin: 3px;
+    margin-left: -18px;
+	width:98%;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+.ribbon span {
+  	position: relative;
+	display: block;
+	text-align: center;
+	bottom: 0em;
+	left: 0;
+	margin-right: 0.2em;
+	padding: .75em 1.25em .75em .75em;
+	margin-left:-0.5em;
+	background-color: @ribbon;
+	background-image: linear-gradient(-90deg, lighten(fadein(@ribbon,20),20%) 0%, fadein(@ribbon,100) 100%);
+	box-shadow: inset 0 .062em 0 rgba(255,255,255,.6), 0 .125em .25em rgba(0,0,0,.2);
+	color: @eqdkpContentBackgroundColor;
+	box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+	 text-transform: uppercase;
+	text-shadow: 0 -.062em 0 rgba(0,0,0,.2);
+	width: 90%;
+	text-align: center;
+	display: block;
+	border-radius: 0 0 0 .5em;
+	word-wrap: break-word;
+}
+
+.ribbon span:before {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+
+.ribbon span:before {
+	top: -1em;
+	left: 0em;
+	width: .5em;
+	height: 3em;
+	border-radius: 0.5em 0 0 .5em;
+	background-image: linear-gradient(to right, darken(fadein(@ribbon,100),1%) 0%, fadein(@ribbon,20) 100%);
+}
+.ribbon span:after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+
+.ribbon span:after {
+	top: -1em;
+	left: 0em;
+	width: .5em;
+	height: 1em;
+	border-radius: .5em 0 0 .5em;
+	background-image: linear-gradient(to right, darken(fadein(@ribbon,100),10) 0%, darken(fadein(@ribbon,80),30) 100%);
+	box-shadow: 0 .062em 0 rgba(255,255,255,.6);
+
+}
+.featured .ribbon > span {
+	background: linear-gradient(-90deg, lighten(@featuredColor,20%) 0%, @featuredColor 100%);
+	color: black;
+}
+
+.featured .ribbon > span:before {
+	border-bottom-color: @featuredColor;
+	background-image: linear-gradient(to right, darken(@featuredColor,1%) 0%, @featuredColor 100%);
+}
+.featured .ribbon > span:after {
+	background-image: linear-gradient(to right, darken(@featuredColor,10%) 0%, darken(@featuredColor,30%) 100%);
+}
+/* Article Boxes for Calendarentries */
+.articleCalendarEventBox {
+  display: inline-block;
+  max-width: 500px;
+  padding: 11px 14px;
+  white-space: nowrap;
+  background-color: @eqdkpContentContrastBackgroundColor;
+  border: 1px solid @eqdkpContentContrastBorderColor;
+  border-radius: 0px;
+  color: @eqdkpContentContrastColor;
+  margin: 5px;
+}
+.articleCalendarEventBoxContent{
+	padding-left:15px;
+}
+.articleCalendarEventBox .bigDateContainer {
+	border-right-color: @eqdkpContentContrastBorderColor;
+}
+
+.articleCalendarEventBox .bigDateNumber {
+	font-size: 35px;
+	line-height: 35px;
+	margin-bottom: 5px;
+}
+.articleCalendarEventBox .green, .articleCalendarEventBox .orange, .articleCalendarEventBox .red, .articleCalendarEventBox .green:hover, .articleCalendarEventBox .orange:hover, .articleCalendarEventBox .red:hover {
+	background: none !important;
+	border: none !important;
+}
+.articleCalendarEventBox .green, .articleCalendarEventBox .green:hover {
+	color: green !important;;
+}
+
+.articleCalendarEventBox .orange, .articleCalendarEventBox .orange:hover {
+	color: orange !important;;
+}
+
+.articleCalendarEventBox .red, .articleCalendarEventBox .red:hover {
+	color: red !important;;
+}
+.qtip-content.ui-widget-content {
+	border-radius: 3px;
+}
 /***************************************************
 /* JQPlot Adjustments
 /**************************************************/
@@ -4309,3 +4681,35 @@ border-color: transparent #EAEAEA;
 	border: 1px solid #26B3F7;
 	box-shadow: 0px 0px 0.6em #25A2EC inset, 0px 0px 0.4em #1497E3 inset, 0px 0px 0.5em rgba(18, 135, 204, 0.5), 0px 0px 0.1em rgba(225, 242, 252, 0.5);
 }
+/***************************************************
+ * Pluggin MediaCenter
+ **************************************************/
+ .contentContrast .badge,.contentSidebar .badge{
+	color: darken(@eqdkpContentContrastColor,80%);
+}
+.mcStatisticBox, .mcCategoriesBox{
+	border-radius:0px;
+	border: 1px solid rgba(0,0,0,.4)
+}
+.contentContrast{
+background-color: @eqdkpContentContrastBackgroundColor;
+box-shadow: 0 0 0 1px rgba(0,0,0,.7) inset,0px 0 0 2px rgba(255,255,255,.1) inset;
+transition: box-shadow .2s ease-in-out 0s;
+padding: 0;
+display: block;
+position: relative;
+}
+/***************************************************
+ *Plugin Feedposter
+ **************************************************/
+.feedposter.feedtype_rss blockquote{
+	background-color: @eqdkpSidebarBackgroundColor !important;
+}
+blockquote{
+	border-radius: 0px;
+}
+.feedposter.feedtype_rss blockquote{
+	border-color: @eqdkpSidebarBorderColor !important;
+	color: @eqdkpSidebarBorderColor !important;
+}
+.feedposter.feedtype_rss blockquote::before{color: @eqdkpSidebarBorderColor !important;}

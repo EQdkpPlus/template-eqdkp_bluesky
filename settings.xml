@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<settings styleversion="0.0.7">	
+<settings styleversion="0.0.8">	
 	<template_path>eqdkp_bluesky</template_path>
 	<body_background>#0e0e0e</body_background>
 	<body_link>#FFCF02</body_link>
@@ -27,6 +27,15 @@
 	<table_border_width>1</table_border_width>
 	<table_border_color>#999999</table_border_color>
 	<table_border_style>solid</table_border_style>
+	
+	<table_th_background_color>rgba(0, 0, 0, 0.65)</table_th_background_color>
+	<table_th_font_color>rgb(159, 159, 159)</table_th_font_color>
+	<table_tr_font_color>rgb(159, 159, 159)</table_tr_font_color>
+	<table_tr_background_color1>rgba(125, 125, 125,0)</table_tr_background_color1>
+	<table_tr_background_color2>rgba(125, 125, 125,0.55)</table_tr_background_color2>
+	<table_tr_background_color_hover>rgba(0, 0, 0,0.4)</table_tr_background_color_hover>
+	
+	<table_border_color>rgb(41, 35, 35)</table_border_color>
 	<input_color>#292323</input_color>
 	<input_border_width>1</input_border_width>
 	<input_border_color>#F7992B</input_border_color>
@@ -40,12 +49,16 @@
 	<portal_width>0px</portal_width>
 	<column_right_width>0px</column_right_width>
 	<column_left_width>0px</column_left_width>
-	<sidebar_background_color>rgba(234, 234, 234, 0.3)</sidebar_background_color>
-	<sidebar_font_color>rgb(0, 0, 0)</sidebar_font_color>
-	<sidebar_border_color>rgb(204, 204, 204)</sidebar_border_color>
-	<content_contrast_color>rgb(0, 0, 0)</content_contrast_color>
-	<content_contrast_background_color>rgba(252, 253, 254, 0.1)</content_contrast_background_color>
-	<content_contrast_border_color>rgb(204, 204, 204)</content_contrast_border_color>
+	<sidebar_background_color>rgba(23,31,44,.4)</sidebar_background_color>
+	<sidebar_font_color>rgb(197, 229, 255)</sidebar_font_color>
+	<sidebar_border_color>rgba(84, 182, 240, 1)</sidebar_border_color>
+	<content_background_color>rgba(23,31,44,.4)</content_background_color>
+	<content_contrast_color>rgb(197, 229, 255)</content_contrast_color>
+	<content_link_color>rgba(197, 229, 255, 1);</content_link_color>
+	<content_link_color_hover>rgba(255, 255, 255, 1)</content_link_color_hover>
+	<content_border_color>rgba(26, 15, 8, 1)</content_border_color>
+	<content_contrast_background_color>rgba(23,31,44,.4)</content_contrast_background_color>
+	<content_contrast_border_color>rgba(0,0,0,.4)</content_contrast_border_color>
 	<content_positive_color>rgb(51, 204, 51)</content_positive_color>
 	<content_negative_color>rgb(226, 59, 48)</content_negative_color>
 	<content_neutral_color>rgb(153, 153, 153)</content_neutral_color>

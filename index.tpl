@@ -18,6 +18,7 @@
 		{JS_FILES}
 		<link rel="shortcut icon" href="{TEMPLATE_PATH}/images/favicon.png" type="image/png" />
 		<link rel="icon" href="{TEMPLATE_PATH}/images/favicon.png" type="image/png" />
+		<link rel="apple-touch-icon" href="{TEMPLATE_PATH}/images/apple-touch-icon.png" />
 		{RSS_FEEDS}
 		<!-- LISTENER head -->
 		<style type="text/css">
@@ -27,236 +28,10 @@
 		<script type="text/javascript">
 			//<![CDATA[
 			{JS_CODE}
-			
-			$(document).ready(function() {
-				/* Login Dialog */
-				$( "#dialog-login" ).dialog({
-					height: <!-- IF S_BRIDGE_INFO -->450<!-- ELSE -->350<!-- ENDIF -->,
-					width: 530,
-					modal: true,
-					autoOpen: false,
-				});
-			});
-			
-			<!-- IF S_NORMAL_HEADER -->
-			var user_timestamp_atom = "{USER_TIMESTAMP_ATOM}";
-			var user_clock_format = "dddd, {USER_DATEFORMAT_LONG} {USER_TIMEFORMAT}";
-			var user_timezone = "{USER_TIMEZONE}";
-			
-			var mymoment = moment(user_timestamp_atom).utcOffset(user_timezone);
-			function user_clock(){	
-				var mydate = mymoment.format(user_clock_format);
-				$('.user_time').html(mydate);
-				mymoment.add(1, 's');
-				window.setTimeout("user_clock()", 1000);
-			}
-			
-			function recalculate_notification_bubbles(){
-				var red = 0; var green = 0; var yellow = 0;
-				$('.notification-content ul li').each(function( index ) {
-					var myclass = $(this).attr('class');
-					var count = $(this).data('count');
-					
-					if (myclass == 'prio_0') green += parseInt(count);
-					if(myclass == 'prio_1') yellow += parseInt(count);
-					if(myclass == 'prio_2') red += parseInt(count);
-				});
-				if (green > 0) {
-					$('.notification-bubble-green').html(green).show();
-				} else {
-					$('.notification-bubble-green').html(green).hide();
-				}
-				if (yellow > 0) {
-					$('.notification-bubble-yellow').html(yellow).show();
-				} else {
-					$('.notification-bubble-yellow').html(yellow).hide();
-				}
-				if (red > 0) {
-					$('.notification-bubble-red').html(red).show();
-				} else {
-					$('.notification-bubble-red').html(red).hide();
-				}
-				
-				if (yellow ==0 && green==0 && red==0){
-					$('.notification-content ul').html({L_notification_none|jsencode});
-				}
-				
-				notification_favicon(red, yellow, green);
-			}
-			
-			var favicon;
-			function notification_favicon(red, yellow, green){
-				if (typeof favicon === 'undefined') return;
-				
-				if (red > 0) {
-					favicon.badge(red, {bgColor: '#d00'});
-					return;
-				}
-				if (yellow > 0) {
-					favicon.badge(yellow, {bgColor: '#F89406'});
-					return;
-				}
-				if (green > 0) {
-					favicon.badge(green, {bgColor: '#468847'});
-					return;
-				}
-				favicon.reset();
-			}
-			
-			function notification_show_only(name){
-				if (name === 'all'){
-					$('.notification-filter').removeClass('filtered');
-					$('.notification-content ul li.prio_0, .notification-content ul li.prio_1, .notification-content ul li.prio_2').show();
-				} else {
-					$('.notification-content ul li.prio_0, .notification-content ul li.prio_1, .notification-content ul li.prio_2').hide();
-					$('.notification-filter').addClass('filtered');
-					$('.'+name+'.notification-filter').removeClass('filtered');
-					if (name === 'notification-bubble-green') $('.notification-content ul li.prio_0').show();
-					if (name === 'notification-bubble-yellow') $('.notification-content ul li.prio_1').show();
-					if (name === 'notification-bubble-red') $('.notification-content ul li.prio_2').show();
-				}
-			}
-			
-			function notification_update(){			
-				$.get("{EQDKP_CONTROLLER_PATH}Notifications{SEO_EXTENSION}{SID}&load", function(data){
-					$('.notification-content ul').html(data);
-					recalculate_notification_bubbles();
-				});
-					
-				//5 Minute
-				window.setTimeout("notification_update()", 1000*60*5);
-			}
-
-			function change_style(){
-				$('<div>').html('<div class="style-switch-container"><i class="fa fa-lg fa-spin fa-spinner"></i></div>').dialog(
-					{ open: function( event, ui ) {
-						$.get("{EQDKP_ROOT_PATH}exchange.php{SID}&out=styles", function(data){
-							$('.style-switch-container').html(data);
-						});
-					}, title: {L_change_style|jsencode}, width: 600, height: 500}
-				);
-			}
-			
-			$(document).ready(function() {
-				user_clock();
-
-				$( ".openLoginModal" ).on('click', function() {
-					$( "#dialog-login" ).dialog( "open" );
-				});
-				
-				/* Notifications */
-				$('.notification-tooltip-trigger').on('click', function(event){
-					$(".notification-tooltip").hide('fast');
-					$("#notification-tooltip-all").show('fast');
-					notification_show_only('all');
-					var classList = $(this).attr('class').split(/\s+/);
-					for (var i = 0; i < classList.length; i++) {
-					   if (classList[i] === 'notification-bubble-red' || classList[i] === 'notification-bubble-yellow' || classList[i] === 'notification-bubble-green') {
-					     notification_show_only(classList[i]);
-					     break;
-					   }
-					}
-					
-					$(document).on('click', function(event) {
-						var count = $(event.target).parents('.notification-tooltip-container').length;
-						if (count == 0 && (!$(event.target).hasClass('notification-markasread')) ){
-							$(".notification-tooltip").hide('fast');
-						}
-					});
-					
-				});
-				$('.notification-mark-all-read').on('click', function() {
-				    $('.notification-content ul').html({L_notification_none|jsencode});
-					$('.notification-bubble-red, .notification-bubble-yellow, .notification-bubble-green').hide();
-					notification_favicon(0, 0, 0);
-					$.get("{EQDKP_CONTROLLER_PATH}Notifications{SEO_EXTENSION}{SID}&markallread");
-				});
-				$('.notification-content').on('click', '.notification-markasread', function() {
-					var ids = $(this).parent().parent().data('ids');
-					$(this).parent().parent().remove();
-					recalculate_notification_bubbles();
-					$.get("{EQDKP_CONTROLLER_PATH}Notifications{SEO_EXTENSION}{SID}&markread&ids="+ids);
-				});
-				$('.notification-filter').on('click', function(event){
-					if ($(this).hasClass('filtered')){
-						//Show all of this
-						if ($(this).hasClass('notification-bubble-green')) $('.notification-content ul li.prio_0').show();
-						if ($(this).hasClass('notification-bubble-yellow')) $('.notification-content ul li.prio_1').show();
-						if ($(this).hasClass('notification-bubble-red')) $('.notification-content ul li.prio_2').show();
-						
-						$(this).removeClass('filtered');
-					} else {
-						//hide all of this
-						if ($(this).hasClass('notification-bubble-green')) $('.notification-content ul li.prio_0').hide();
-						if ($(this).hasClass('notification-bubble-yellow')) $('.notification-content ul li.prio_1').hide();
-						if ($(this).hasClass('notification-bubble-red')) $('.notification-content ul li.prio_2').hide();
-						$(this).addClass('filtered');
-					}
-				});
-				//Periodic Update of Notifications
-				window.setTimeout("notification_update()", 1000*60*5);
-				//Update Favicon
-				favicon = new Favico({animation:'none'});
-				notification_favicon({NOTIFICATION_COUNT_RED}, {NOTIFICATION_COUNT_YELLOW}, {NOTIFICATION_COUNT_GREEN});
-				
-				$('.tooltip-trigger').on('click', function(event){
-					event.preventDefault();
-					var mytooltip = $(this).data('tooltip');
-					$("#"+mytooltip).show('fast');
-					$(document).on('click', function(event) {
-						var count = $(event.target).parents('.'+mytooltip+'-container').length;
-						if (count == 0){
-							$("#"+mytooltip).hide('fast');
-						}
-					});
-				});
-				
-				$('.user-tooltip-trigger').on('dblclick', function(event){
-					$("#user-tooltip").hide('fast');
-					window.location="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}";
-				});
-				
-				$('ul.mainmenu li.link_li_indexphp a.link_indexphp, ul.mainmenu li.link_li_entry_home a.link_entry_home').html('');
-				$('ul.mainmenu').addClass('sf-menu');
-				jQuery('ul.mainmenu').superfish({
-						delay:		400,
-						animation:	{opacity:'show',height:'show'},
-						speed:		'fast'
-				});
-				
-				<!-- IF S_MYCHARS_POINTS and U_CHARACTERS != "" -->
-				/* My Chars Points */
-				$('.mychars-points-tooltip .char').on('click', function(){
-					$(this).parent().parent().children('tr').removeClass("active");
-					$(this).parent().addClass("active");
-					var current = $(this).parent().find('.current').html();
-					var icons = $(this).parent().find('.icons').html();
-					$(".mychars-points-target").html(icons + " "+current);
-					var id = $(this).parent().attr('id');
-					localStorage.setItem('mcp_{USER_ID}', id);
-				});
-				var saved = localStorage.getItem('mcp_{USER_ID}');
-
-				if (saved && saved != "" && $('#'+saved).find('.current').html() != undefined){
-					$('#'+saved).addClass("active");
-					var current = $('#'+saved).find('.current').html();
-					var icons = $('#'+saved).find('.icons').html();
-					$(".mychars-points-target").html(icons + " "+current);
-				} else {
-					$('.mychars-points-tooltip .main').addClass("active");
-					var current = $('.mychars-points-tooltip .main').find('.current').html();
-					var icons = $('.mychars-points-tooltip .main').find('.icons').html();
-					$(".mychars-points-target").html(icons + " "+current);
-				}
-				<!-- ENDIF -->
-			});
-			<!-- ELSE -->
-				<!-- JS for simple header. Above is for normal header only -->
-			<!-- ENDIF -->
 			//]]>
 		</script>
 	</head>
-	<body id="top" class="<!-- IF S_REPONSIVE -->responsive <!-- ENDIF --><!-- IF not S_NORMAL_HEADER -->simple-header<!-- ENDIF --> {BROWSER_CLASS}<!-- IF T_PORTAL_WIDTH --> fixed_width<!-- ENDIF --><!-- IF S_IN_ADMIN --> admin<!-- ELSE --> frontend<!-- ENDIF -->">
+	<body id="top" data-template="{TEMPLATE_CLASS}" class="<!-- IF S_REPONSIVE -->responsive <!-- ENDIF --><!-- IF not S_NORMAL_HEADER -->simple-header<!-- ENDIF --> {BROWSER_CLASS}<!-- IF T_PORTAL_WIDTH --> fixed_width<!-- ENDIF --><!-- IF S_IN_ADMIN --> admin<!-- ELSE --> frontend<!-- ENDIF -->">
 		<!-- LISTENER body_top -->
 		
 		{STATIC_HTMLCODE}
@@ -403,7 +178,7 @@
 				<div id="logoContainer" class="{T_LOGO_POSITION}">
 					<div id="logoArea">
 						<!-- IF HEADER_LOGO -->
-						<img src="{HEADER_LOGO}" alt="{MAIN_TITLE}" id="mainlogo" />
+						<a href="{EQDKP_CONTROLLER_PATH}{SID}"><img src="{HEADER_LOGO}" alt="{MAIN_TITLE}" id="mainlogo" /></a>
 						<!-- ENDIF -->
 					</div><!-- close logoArea -->
 					
@@ -574,7 +349,7 @@
 		
 		<footer id="footer">
 				<!-- LISTENER footer_top -->
-				<div class="portal_block1">{PORTAL_BLOCK2}</div>
+				<div class="portal_block2">{PORTAL_BLOCK2}</div>
 				{EQDKP_PLUS_COPYRIGHT}
 				<!-- LISTENER footer_bottom -->
 		</footer><!-- close footer -->
@@ -585,6 +360,7 @@
 		<!-- LISTENER debug -->
 	<!-- ENDIF -->
 
+	<!-- IF not S_LOGGED_IN -->
 	<div id="dialog-login" title="{L_login}">
 		<form method="post" action="{EQDKP_CONTROLLER_PATH}Login{SEO_EXTENSION}{SID}" name="login" id="login" class="fv_checkit">
 			<!-- LISTENER login_popup -->
@@ -630,17 +406,96 @@
 			<!-- ENDIF -->
 		</form>
 	</div>
+	<!-- ENDIF -->
+	
 	<div class="reponsiveTestClass" style="display:none;"><!-- This div is for testing the responsiveness --></div>
 	<script type="text/javascript">
+		//<![CDATA[			
+			<!-- IF not S_LOGGED_IN -->
+			$(function(){
+				/* Login Dialog */
+				$( "#dialog-login" ).dialog({
+					height: <!-- IF S_BRIDGE_INFO -->450<!-- ELSE -->350<!-- ENDIF -->,
+					width: 530,
+					modal: true,
+					autoOpen: false,
+				});
+			});
+			<!-- ENDIF -->
+			
+			<!-- IF S_NORMAL_HEADER -->
+			
+			function recalculate_notification_bubbles(){
+				var red = 0; var green = 0; var yellow = 0;
+				$('.notification-content ul li').each(function( index ) {
+					var myclass = $(this).attr('class');
+					var count = $(this).data('count');
+					
+					if (myclass == 'prio_0') green += parseInt(count);
+					if(myclass == 'prio_1') yellow += parseInt(count);
+					if(myclass == 'prio_2') red += parseInt(count);
+				});
+				if (green > 0) {
+					$('.notification-bubble-green').html(green).show();
+				} else {
+					$('.notification-bubble-green').html(green).hide();
+				}
+				if (yellow > 0) {
+					$('.notification-bubble-yellow').html(yellow).show();
+				} else {
+					$('.notification-bubble-yellow').html(yellow).hide();
+				}
+				if (red > 0) {
+					$('.notification-bubble-red').html(red).show();
+				} else {
+					$('.notification-bubble-red').html(red).hide();
+				}
+				
+				if (yellow ==0 && green==0 && red==0){
+					$('.notification-content ul').html({L_notification_none|jsencode});
+				}
+				
+				notification_favicon(red, yellow, green);
+			}
+			
+
+			function change_style(){
+				$('<div>').html('<div class="style-switch-container"><i class="fa fa-lg fa-spin fa-spinner"></i></div>').dialog(
+					{ open: function( event, ui ) {
+						$.get("{EQDKP_ROOT_PATH}exchange.php{SID}&out=styles", function(data){
+							$('.style-switch-container').html(data);
+						});
+					}, title: {L_change_style|jsencode}, width: 600, height: 500}
+				);
+			}
+			
+			/* User clock */
+			var user_clock_format = "dddd, "+mmocms_user_dateformat_long+" "+ mmocms_user_timeformat;
+			var mymoment = moment(mmocms_user_timestamp_atom).utcOffset(mmocms_user_timezone);
+			
+			$(function(){
+				$('.notification-mark-all-read').on('click', function() {
+				    $('.notification-content ul').html({L_notification_none|jsencode});
+					$('.notification-bubble-red, .notification-bubble-yellow, .notification-bubble-green').hide();
+					notification_favicon(0, 0, 0);
+					$.get(mmocms_controller_path+"Notifications"+mmocms_seo_extension+mmocms_sid+"&markallread");
+				});
+	
+				//Update Favicon
+				favicon = new Favico({animation:'none'});
+				notification_favicon({NOTIFICATION_COUNT_RED}, {NOTIFICATION_COUNT_YELLOW}, {NOTIFICATION_COUNT_GREEN});
+			});
+			<!-- ELSE -->
+				<!-- JS for simple header. Above is for normal header only -->
+			<!-- ENDIF -->
+
 		{JS_CODE_EOP}
-		{JS_CODE_EOP2}
 		
 		//Reset Favicon, for Bookmarks
 		$(window).on('unload', function() {
-            if (typeof favicon !== 'undefined'){
-				favicon.reset();
-			}
+            if (typeof favicon !== 'undefined'){ favicon.reset(); }
    		 });
+   		 //]]>
 	</script>
 	{FOOTER_CODE}
 	<!-- LISTENER body_bottom -->
