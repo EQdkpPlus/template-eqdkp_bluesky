@@ -3276,15 +3276,6 @@ ul.image-gallery li.folder i {
 	line-height: 100px;
 }
 
-td.twinktd > * {
-	vertical-align : top;
-	max-height:150px;
-	align:center;
-}
-td.twinktd i {
-	margin-top: 5px;
-}
-
 /* Colorbox */
 
 button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
