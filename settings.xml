@@ -60,7 +60,7 @@
 	<content_contrast_color>rgb(197, 229, 255)</content_contrast_color>
 	<content_link_color>rgba(197, 229, 255, 1);</content_link_color>
 	<content_link_color_hover>rgba(255, 255, 255, 1)</content_link_color_hover>
-	<content_border_color>rgba(26, 15, 8, 1)</content_border_color>
+	<content_border_color>rgba(255,255,255,.08)</content_border_color>
 	<content_contrast_background_color>rgba(23,31,44,.4)</content_contrast_background_color>
 	<content_contrast_border_color>rgba(0,0,0,.4)</content_contrast_border_color>
 	<content_positive_color>rgb(51, 204, 51)</content_positive_color>
@@ -71,6 +71,9 @@
 	<content_font_color_headings>rgb(255, 255, 255)</content_font_color_headings>
 	
 	<menu_background_color>rgba(255,255,255,.05)</menu_background_color>
+	<menu_background_color_hover>rgba(0,22,41,.9)</menu_background_color_hover>
+	
+	<container_background_color>rgba(23,31,44,.4)</container_background_color>
 	
 	<input_border_style>solid</input_border_style>
 	<input_color>#292323</input_color>
@@ -81,5 +84,8 @@
 	<input_background_color_active>rgba(4, 13, 26, 1)</input_background_color_active>
 	<input_border_color_active>rgba(51, 128, 200, 1)</input_border_color_active>
 	<input_font_color_active>rgb(255, 255, 255)</input_font_color_active>
-
+	<additional_less>
+		@styleCalendarStateColor : true; //colorized Raidstatus
+		@styleCalenderGameStyle : true;  
+	</additional_less>
 </settings>
