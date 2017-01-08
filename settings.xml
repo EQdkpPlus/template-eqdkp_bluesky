@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<settings styleversion="0.0.9">	
+<settings styleversion="2.3.0">	
 	<template_path>eqdkp_bluesky</template_path>
 	<attendees_columns>6</attendees_columns>
 	<logo_position>left</logo_position>
@@ -55,6 +55,13 @@
 	<sidebar_background_color>rgba(23,31,44,.4)</sidebar_background_color>
 	<sidebar_font_color>rgb(197, 229, 255)</sidebar_font_color>
 	<sidebar_border_color>rgba(84, 182, 240, 1)</sidebar_border_color>
+	
+	<button_background_color>#00adee</button_background_color>
+	<button_font_color>rgba(255, 255, 255, 1)</button_font_color>
+	<button_border_color>#0076a3</button_border_color>
+	<button_background_color_hover>#00678e</button_background_color_hover>
+	<button_font_color_hover>#d9eef7</button_font_color_hover>
+	<button_border_color_hover>#0076a3</button_border_color_hover>
 	
 	<content_background_color>rgba(23,31,44,.4)</content_background_color>
 	<content_contrast_color>rgb(197, 229, 255)</content_contrast_color>
