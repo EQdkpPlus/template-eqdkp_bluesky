@@ -932,6 +932,8 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 	border: 0px none;
 	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3) inset, 0px 1px rgba(255, 255, 255, 0.06);
 }
+select optgroup{background:darken(@eqdkpInputBackgroundColor,40);}
+
 
 select:focus, textarea:focus, input:focus, select:hover, textarea:hover, input:hover{
 	color: #FFF;
@@ -1502,7 +1504,9 @@ text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
 }
 
 .sortable li.mjs-nestedSortable-leaf div, .sortable li div{
-background: rgba(0, 0, 0, 0.65) !important;
+background: rgba(0,0,0,.25) !important;
+box-shadow: 0 0 1px 1px rgba(0, 0, 0, 1);
+border: inherit;
 }
 
 /***************************************************
@@ -1940,14 +1944,17 @@ ul.breamcrumb .current::before {
 }
 .manage_menues_block li, .manage_menues_block2 li {
 	list-style-type: none; padding: 5px;
-	margin:5px; background-color:#F5F5F5; cursor:pointer; color:#666;
+	margin:5px; 
+	cursor:pointer; color:rgba(255,255,255,.7);
+	background: rgba(0,0,0,.25) !important;
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 1);
 }
 
 .manage_menues_block .toggle_button {
 	font-family: 'Trebuchet MS',Arial,sans-serif;
 	font-weight: bold;
 	border-bottom: 1px solid #CCCCCC;
-	background-color: #EAEAEA;
+	background-color: rgba(0,0,0,.55);
 	padding: 3px;
 }
 .adminicon:before {
@@ -2238,17 +2245,17 @@ ul.portal_block {
 	border-radius: 0em;
 }
 /* add calendar event */
-input#selectmode  ul { position: relative; width: 160px; cursor: pointer; }
-input#selectmode  ul > li { padding: 8px 12px; background: #fff; border: 1px solid #ccc; border-radius: 3px; }
+input#selectmode  ul { position: relative; width: 160px; cursor: pointer; color:@eqdkpInputFontColor; }
+input#selectmode  ul > li { padding: 8px 12px; background:@eqdkpInputBackgroundColor; border: 1px solid @eqdkpInputBorderColor; border-radius: 3px; }
 input#selectmode  ul:hover > li, input#selectmode  ul > li.open { border-color: rgba(82, 168, 236, 0.8); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6); }
 
-input#selectmode  ul > li:after { display: block; content: ''; width: 0; height: 0; position: absolute; top: 40%; right: 12px; border: 8px solid transparent; border-top-color: #666; }
-input#selectmode  ul > li.open:after { top: 10%; border-top-color: transparent; border-bottom-color: #666; }
+input#selectmode  ul > li:after { display: block; content: ''; width: 0; height: 0; position: absolute; top: 40%; right: 12px; border: 8px solid transparent; border-top-color:@eqdkpInputFontColor; }
+input#selectmode  ul > li.open:after { top: 10%; border-top-color: transparent; border-bottom-color: @eqdkpInputFontColor; }
 
 input#selectmode  ul > li  ul { display: none; height: auto; margin-top: -2px; position: absolute; top: auto; left: 0; right: 0; z-index: 99; background: #fff; border: 1px solid #ccc; border-top: 1px solid #eee; border-radius: 0 0 3px 3px; box-shadow: 2px 3px 5px rgba(0, 0, 0, .25) }
-input#selectmode  ul > li.open  ul { display: block; }
+input#selectmode  ul > li.open  ul { display: block; color:@eqdkpInputFontColorActive }
 input#selectmode  ul > li  ul > li { padding: 8px 12px; }
-input#selectmode  ul > li  ul > li:hover { background: #efefef; }
+input#selectmode  ul > li  ul > li:hover { background: @eqdkpInputBackgroundColor; }
 
 fieldset.settings.floatRight.raid dl {
 	margin-bottom: 0px;
