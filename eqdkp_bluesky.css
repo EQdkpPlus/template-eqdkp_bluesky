@@ -1669,29 +1669,29 @@ div.pagination {
 hr#system-readmore {
 	display:none;
 }
-
+@eqdkpBreadcrumbColour:@eqdkpContentAccentColor;
 ul.breadcrumb,
 ul.breamcrumb {
-	color: #00C0FF;
+	color: @eqdkpBreadcrumbColour;
 	font-size: 13px;
 	border-width: 1px;
 	border-style: solid;
-	border-color: #54B6F0;
+	border-color: lighten(saturate(@eqdkpBreadcrumbColour,20),20);
 	border-radius: 0px;
 	overflow: hidden;
 	float:left;
 	width: 100%;
 	transition: opacity 0.2s ease 0s, width 0.8s ease-out 0s, background-color 1s ease 0s, border-color 0.3s ease 0s, box-shadow 1s ease 0s;
 	animation: 6s ease-in 0s normal none 10 running pulse;
-	background-color: rgba(18, 135, 204, 0.2);
-	box-shadow: 0px 0px 0.6em #25A2EC inset, 0px 0px 0.4em #1497E3 inset, 0px 0px 0.5em rgba(18, 135, 204, 0.5), 0px 0px 0.1em rgba(225, 242, 252, 0.5);
+	background-color: fadeout(darken(@eqdkpBreadcrumbColour,20),80);
+	box-shadow: 0px 0px 0.6em lighten(saturate(@eqdkpBreadcrumbColour,20),20) inset, 0px 0px 0.4em darken(@eqdkpBreadcrumbColour,20) inset, 0px 0px 0.5em fadeout(darken(@eqdkpBreadcrumbColour,20),50), 0px 0px 0.1em rgba(225, 242, 252, 0.5;
 }
 
 ul.breadcrumb li,
 ul.breamcrumb li {
 	float: left;
 	position: relative;
-	border-right: 1px solid #082F47;
+	border-right: 1px solid spin(#082F47,150%);
 	}
 
 ul.breadcrumb a,
@@ -1702,8 +1702,8 @@ ul.breamcrumb a {
 	color: #FFF;
 	position: relative;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.65);
-	background-color: rgba(18, 135, 204, 0.7);
-	background-image: linear-gradient(to right, rgba(37, 162, 236, 0.8), #082F47);
+	background-color: fadeout(darken(@eqdkpBreadcrumbColour,20),80);
+	background-image: linear-gradient(to right, darken(@eqdkpBreadcrumbColour,20), darken(@eqdkpBreadcrumbColour,70)); /*082F47*/
 }
 
 ul.breadcrumb li:first-child a,
@@ -1721,7 +1721,7 @@ ul.breamcrumb li:first-child a i {
 ul.breadcrumb a:hover,
 ul.breamcrumb a:hover {
 	background-color: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;
-	background-image: linear-gradient(to right, #082F47, #082F47);
+	background-image: linear-gradient(to right, darken(@eqdkpBreadcrumbColour,70), darken(@eqdkpBreadcrumbColour,70));
 }
 
 ul.breadcrumb a::after,
@@ -1742,22 +1742,22 @@ ul.breamcrumb a::before {
 ul.breadcrumb a::after,
 ul.breamcrumb a::after {
 	z-index: 2;
-	border-left-color: #082F47;
+	border-left-color: darken(@eqdkpBreadcrumbColour,70);
 }
 
 ul.breadcrumb a::before,
 ul.breamcrumb a::before {
-	border-left-color: #082F47;
+	border-left-color: darken(@eqdkpBreadcrumbColour,70);
 	right: -1.1em;
 	z-index: 1;
 }
 ul.breadcrumb a:hover::before,
 ul.breamcrumb a:hover::before {
-	border-left-color: #082F47;
+	border-left-color: darken(@eqdkpBreadcrumbColour,70);
 }
 ul.breadcrumb a:hover::after,
 ul.breamcrumb a:hover::after {
-	border-left-color: #082F47;
+	border-left-color: darken(@eqdkpBreadcrumbColour,70);
 
 }
 
