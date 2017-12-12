@@ -550,6 +550,7 @@ div.contentBox {
 	font-weight: bold;
 	line-height: 28px;
 	font-weight: bold;
+	margin-left: 5px;
 }
 .portalbox_head .portal_fe_edit {
 	display: none;
@@ -562,7 +563,7 @@ div.contentBox {
 .portalbox_content {
 	white-space: normal;
 	background-color: rgba(23, 31, 44, 0.4);
-	padding: 0px 0px 0px;
+	padding: 3px;
 	display: block;
 	position: relative;
 	line-height: 20px;
@@ -1679,7 +1680,6 @@ ul.breamcrumb {
 	border-color: lighten(saturate(@eqdkpBreadcrumbColour,20),20);
 	border-radius: 0px;
 	overflow: hidden;
-	float:left;
 	width: 100%;
 	transition: opacity 0.2s ease 0s, width 0.8s ease-out 0s, background-color 1s ease 0s, border-color 0.3s ease 0s, box-shadow 1s ease 0s;
 	animation: 6s ease-in 0s normal none 10 running pulse;
@@ -1826,7 +1826,7 @@ ul.breamcrumb .current::before {
 
 .article-container-wrapper{
 	padding-right: 10px;
-	padding-left: 10px;
+	padding-left: 20px;
 }
 
 /* ACP: admin menu - update available badge */
@@ -2421,7 +2421,7 @@ fieldset.raidcal_infos dt, fieldset.moderation_panel dt {
 	.attendee_box.char_edit	{ border:1px solid #ff9d55; }
 	.attendee_select		{ flex:0 0 22px; }
 	.attendee_name			{ flex:2 1 100%; color: @eqdkpContentFontColor; overflow:hidden; text-overflow:ellipsis; }
-	.attendee_name a		{ color:@eqdkpContentFontColor; overflow:hidden; text-overflow:ellipsis; vertical-align:middle; }
+	.attendee_name a		{ color:inherit; overflow:hidden; text-overflow:ellipsis; vertical-align:middle; }
 	.attendee_info			{ flex:1 0 auto; padding-right:3px; }
 	.attendee_info .fa-info	{ padding-right:5px; }
 
@@ -3777,7 +3777,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	}
 
 	.responsive button.ui-multiselect {
-		width: auto !important;
+		width: 100% !important;
 	}
 
 	.responsive.simple-header.mobile .floatRight {
@@ -3806,7 +3806,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	}
 
 	.mobile-overlay {
-		display:none; position:fixed; top:0; left:0; bottom:0; right:0; max-width:100vw; z-index:500; background:@eqdkpContainerBackgroundColor; overflow-y:auto;
+		display:none; position:fixed; top:0; left:0; bottom:0; right:0; max-width:100vw; z-index:500; background:fade(@eqdkpContainerBackgroundColor, 80%); overflow-y:auto;
 
 		// Base Layout
 		.overlay-header				{ display:flex; justify-content:space-between; margin-bottom:10px; }
@@ -3934,6 +3934,11 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.responsive .bigDateTd {
 		display: none;
 	}
+	// relocate portal modules
+	.portal .columnContainer { display:flex; flex-flow:column nowrap; }
+	.portal .columnContainer .first.column { order:1; }
+	.portal .columnContainer .second.column { order:0; }
+	.portal .columnContainer .third.column { order:2; }
 }
 
 @media all and (max-width: 590px) {
@@ -4742,3 +4747,20 @@ label.isBoolean > input[type="radio"]:checked + span.green, label.isBoolean > sp
 	display: inline-block;
 }
 /* End Boolean Boxes */
+
+/* Iframe widget */
+body.module-iframe {
+	background: transparent;
+	margin: 0;
+}
+
+.module-iframe #contentBody, .module-iframe #contentBody2 {
+	background: transparent;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.module-iframe #plus_debug_tabs {
+	display: none;
+} 

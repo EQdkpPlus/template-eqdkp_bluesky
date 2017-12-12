@@ -96,4 +96,5 @@
 		@styleCalendarStateColor : true; //colorized Raidstatus
 		@styleCalenderGameStyle : true; 	
 	</additional_less>
+	<editor_theme>charcoal</editor_theme>
 </settings>
