@@ -18,7 +18,7 @@
  *	along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-.templateBoxShadow1{    box-shadow: 0px 0px 0px 1px @templateShadowColor1 inset, 0px 0px 0px 2px @templateShadowColor2 inset;}	
+.templateBoxShadow1{    box-shadow: 0px 0px 0px 1px @templateShadowColor1 inset, 0px 0px 0px 2px @templateShadowColor2 inset;}
 @templateShadowColor1: rgba(0, 0, 0, 0.7);
 @templateShadowColor2: rgba(255, 255, 255, 0.1);
 	
@@ -885,8 +885,9 @@ ul.adminmenu ul.sub-menu li:hover > .sub-menu-arrow:after {
 	display: none;
 	padding: 3px;
 	position: absolute;
-	top: -1.5px;
+	top: 50%;
 	left: 100%;
+	transform: translateY(-50%);
 	background: linear-gradient(to bottom, #fff 0%, #ededed 100%);
 	border: 1px solid #b7b7b7;
 	border-radius: 3px;
@@ -1193,7 +1194,6 @@ a.button, a.button:hover {
 /* Tables */
 .table {
 	display: table;
-	width: 100%;
 }
 .table.fullwidth {
 	width: 100%;
@@ -1327,7 +1327,7 @@ fieldset.settings dt {
 	float: left;
 	width: auto;
 }
-fieldset.settings dd  dd {
+fieldset.settings dd + dd {
 	padding-top: 5px;
 }
 fieldset.settings dt {
@@ -1442,7 +1442,7 @@ div[aria-describedby="dialog-login"] .password-forgot{
 	padding-bottom: 4px;
 }
 
-// jQuery UI adjustments 
+// jQuery UI adjustments
 .ui-dialog .ui-widget-header {
 	background: #2F2F2F!important;
 }
@@ -1671,8 +1671,7 @@ hr#system-readmore {
 	display:none;
 }
 @eqdkpBreadcrumbColour:@eqdkpContentAccentColor;
-ul.breadcrumb,
-ul.breamcrumb {
+ul.breadcrumb {
 	color: @eqdkpBreadcrumbColour;
 	font-size: 13px;
 	border-width: 1px;
@@ -1687,15 +1686,13 @@ ul.breamcrumb {
 	box-shadow: 0px 0px 0.6em lighten(saturate(@eqdkpBreadcrumbColour,20),20) inset, 0px 0px 0.4em darken(@eqdkpBreadcrumbColour,20) inset, 0px 0px 0.5em fadeout(darken(@eqdkpBreadcrumbColour,20),50), 0px 0px 0.1em rgba(225, 242, 252, 0.5;
 }
 
-ul.breadcrumb li,
-ul.breamcrumb li {
+ul.breadcrumb li {
 	float: left;
 	position: relative;
 	border-right: 1px solid spin(#082F47,150%);
 	}
 
-ul.breadcrumb a,
-ul.breamcrumb a {
+ul.breadcrumb a {
 	padding: 1em 1em 1em 2em;
 	display: block;
 	text-decoration: none;
@@ -1706,28 +1703,23 @@ ul.breamcrumb a {
 	background-image: linear-gradient(to right, darken(@eqdkpBreadcrumbColour,20), darken(@eqdkpBreadcrumbColour,70)); /*082F47*/
 }
 
-ul.breadcrumb li:first-child a,
-ul.breamcrumb li:first-child a {
+ul.breadcrumb li:first-child a {
 	margin-bottom: -4px;
 	margin-top: -3px;
 	padding-left: 1em;
 }
 
-ul.breadcrumb li:first-child a i,
-ul.breamcrumb li:first-child a i {
+ul.breadcrumb li:first-child a i {
 	font-size: 1.5em;
 }
 
-ul.breadcrumb a:hover,
-ul.breamcrumb a:hover {
+ul.breadcrumb a:hover {
 	background-color: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;
 	background-image: linear-gradient(to right, darken(@eqdkpBreadcrumbColour,70), darken(@eqdkpBreadcrumbColour,70));
 }
 
 ul.breadcrumb a::after,
-ul.breamcrumb a::after,
-ul.breadcrumb a::before,
-ul.breamcrumb a::before {
+ul.breadcrumb a::before {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -1739,45 +1731,36 @@ ul.breamcrumb a::before {
 ;
 }
 
-ul.breadcrumb a::after,
-ul.breamcrumb a::after {
+ul.breadcrumb a::after {
 	z-index: 2;
 	border-left-color: darken(@eqdkpBreadcrumbColour,70);
 }
 
-ul.breadcrumb a::before,
-ul.breamcrumb a::before {
+ul.breadcrumb a::before {
 	border-left-color: darken(@eqdkpBreadcrumbColour,70);
 	right: -1.1em;
 	z-index: 1;
 }
-ul.breadcrumb a:hover::before,
-ul.breamcrumb a:hover::before {
+ul.breadcrumb a:hover::before {
 	border-left-color: darken(@eqdkpBreadcrumbColour,70);
 }
-ul.breadcrumb a:hover::after,
-ul.breamcrumb a:hover::after {
+ul.breadcrumb a:hover::after {
 	border-left-color: darken(@eqdkpBreadcrumbColour,70);
 
 }
 
 ul.breadcrumb .current,
-ul.breamcrumb .current,
-ul.breadcrumb .current:hover,
-ul.breamcrumb .current:hover {
+ul.breadcrumb .current:hover {
 	font-weight: bold;
 	background: none;
 }
 
 ul.breadcrumb .current::after,
-ul.breamcrumb .current::after,
-ul.breadcrumb .current::before,
-ul.breamcrumb .current::before {
+ul.breadcrumb .current::before {
 	content: normal;
 }
 
-.breadcrumb-container,
-.breamcrumb-container {
+.breadcrumb-container {
 	margin-bottom: 8px;
 }
 
@@ -1944,7 +1927,7 @@ ul.breamcrumb .current::before {
 }
 .manage_menues_block li, .manage_menues_block2 li {
 	list-style-type: none; padding: 5px;
-	margin:5px; 
+	margin:5px;
 	cursor:pointer; color:rgba(255,255,255,.7);
 	background: rgba(0,0,0,.25) !important;
 	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 1);
@@ -2532,6 +2515,14 @@ fieldset.raidcal_infos dt, fieldset.moderation_panel dt {
 	top: -8px;
 	left: -14px;
 }
+.unsigened_away:before{
+	content: "\f0f2";
+	font-family: FontAwesome;
+	margin-right: 5px;
+}
+.unsigened_away{
+	color: gray !important;
+}
 .tooltiprow{
 	min-height: 24px;
 }
@@ -2573,6 +2564,17 @@ fieldset.raidcal_infos dt, fieldset.moderation_panel dt {
 .eventdata-details div{
 	margin: 8px 0px;
 }
+#eventdetailsmap_map{
+	height: 300px;
+}
+.map_frame{
+	background:#fff;
+	padding:15px;
+	margin-bottom: 12px;
+	box-shadow: 0 0 20px #999;
+	border-radius:2px;
+}
+
 /***************************************************
  * GENERAL: game specific
  **************************************************/
@@ -3703,40 +3705,31 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	}
 
 	.responsive .breadcrumb li,
-	.responsive .breamcrumb li,
 	.responsive .breadcrumb li a:after,
-	.responsive .breamcrumb li a:after,
-	.responsive .breadcrumb li a:before,
-	.responsive .breamcrumb li a:before {
+	.responsive .breadcrumb li a:before {
 		display: none;
 	}
 
 	.responsive .breadcrumb li:first-child,
-	.responsive .breamcrumb li:first-child,
-	.responsive .breadcrumb li:nth-last-of-type(2),
-	.responsive .breamcrumb li:nth-last-of-type(2) {
+	.responsive .breadcrumb li:nth-last-of-type(2) {
 		display: inline;
 	}
 
-	.responsive .breadcrumb li:first-child a,
-	.responsive .breamcrumb li:first-child a {
+	.responsive .breadcrumb li:first-child a {
 		border-right: 1px solid #1D1D1D;
 		padding-right: 8px;
 		padding-left: 8px !important;
 	}
 
-	.responsive .breadcrumb li,
-	.responsive .breamcrumb li {
+	.responsive .breadcrumb li {
 		font-size: 14px;
 	}
 
-	.responsive .breadcrumb li:nth-last-of-type(2) a,
-	.responsive .breamcrumb li:nth-last-of-type(2) a {
+	.responsive .breadcrumb li:nth-last-of-type(2) a {
 		padding-left: 22px;
 	}
 
-	.responsive .breadcrumb li:nth-last-of-type(2) a:before,
-	.responsive .breamcrumb li:nth-last-of-type(2) a:before {
+	.responsive .breadcrumb li:nth-last-of-type(2) a:before {
 		content:"\f060";
 		display:inline;
 		border: none;
@@ -3749,8 +3742,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		font-family: "FontAwesome";
 	}
 
-	.responsive .breadcrumb li:first-child a:before,
-	.responsive .breamcrumb li:first-child a:before {
+	.responsive .breadcrumb li:first-child a:before {
 		display: none;
 	}
 
@@ -3889,6 +3881,10 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		height: auto !important;
 	}
 
+	.responsive .article_content iframe {
+		max-width: 100%;
+	}
+
 	.responsive .embed-content div iframe {
 	    position: absolute;
 	    top: 0;
@@ -3903,10 +3899,6 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	  height: 0;
 	  margin: 10px 0;
 	  overflow: hidden;
-	}
-
-	.responsive .ui-notify {
-		max-width: 95%;
 	}
 
 	.responsive .langswitch-tooltip-trigger > span {
@@ -3934,6 +3926,11 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.responsive .bigDateTd {
 		display: none;
 	}
+	
+	#bottommenu_admin, #bottommenu_chars{
+		width: 90% !important;
+	}
+	
 	// relocate portal modules
 	.portal .columnContainer { display:flex; flex-flow:column nowrap; }
 	.portal .columnContainer .first.column { order:1; }
@@ -4002,6 +3999,11 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.list-type1 .ribbons, .list-type2 .ribbons, .list-type3 .ribbons  {
 		display: none;
 	}
+	
+	#bottommenu_admin, #bottommenu_chars{
+		width: 98% !important;
+		height: 64px !important;
+	}
 }
 
 
@@ -4042,7 +4044,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	margin: 10px 0px;
 	display:inline;
 }
-#errorlog_tabs #el_mail iframe { background: #999; } 
+#errorlog_tabs #el_mail iframe { background: #999; }
 .greenbox{
 	background-color: #DFF0D8;
 	border-color: #D6E9C6;
@@ -4695,7 +4697,7 @@ blockquote{
 }
 .feedposter.feedtype_rss blockquote::before{color: @eqdkpSidebarBorderColor !important;}
 /***************************************************
-/* Boolean Boxes 
+/* Boolean Boxes
 / **************************************************/
 @styleBooleanRed: #660000;
 @styleBooleanGreen: #1d4305;
@@ -4763,4 +4765,4 @@ body.module-iframe {
 
 .module-iframe #plus_debug_tabs {
 	display: none;
-} 
+}
