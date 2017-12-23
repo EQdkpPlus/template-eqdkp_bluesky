@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<settings styleversion="2.3.0">	
+<settings styleversion="2.3.1">	
 	<template_path>eqdkp_bluesky</template_path>
 	<attendees_columns>6</attendees_columns>
 	<logo_position>left</logo_position>
 	<favicon_img></favicon_img>
 	<banner_img>../../../../../templates/eqdkp_bluesky/images/template_background.jpg</banner_img>
-	<body_background>#0e0e0e</body_background>	
+	<body_background>#0e0e0e</body_background>
 	<background_pos>normal</background_pos>
 	<background_type>0</background_type>
 	
@@ -94,7 +94,7 @@
 	<input_font_color_active>rgb(255, 255, 255)</input_font_color_active>
 	<additional_less>
 		@styleCalendarStateColor : true; //colorized Raidstatus
-		@styleCalenderGameStyle : true; 	
+		@styleCalenderGameStyle : true;
 	</additional_less>
 	<editor_theme>charcoal</editor_theme>
 </settings>

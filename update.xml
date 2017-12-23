@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <update>
-	<styleupdate styleversion="2.3.0">
+	<styleupdate styleversion="2.3.1">
 		<delete>jquery_tmpl.css</delete>
 		<delete>images/ui-bg_flat_0_303030_40x100.png</delete>
 		<delete>images/ui-bg_flat_0_aaaaaa_40x100.png</delete>
