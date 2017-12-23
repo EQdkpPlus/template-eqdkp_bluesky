@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<update>
+	<styleupdate styleversion="2.3.0">
+		<delete>jquery_tmpl.css</delete>
+		<delete>images/ui-bg_flat_0_303030_40x100.png</delete>
+		<delete>images/ui-bg_flat_0_aaaaaa_40x100.png</delete>
+		<delete>images/ui-bg_flat_30_cccccc_40x100.png</delete>
+		<delete>images/ui-bg_flat_50_5c5c5c_40x100.png</delete>
+		<delete>images/ui-bg_flat_75_ffffff_40x100.png</delete>
+		<delete>images/ui-bg_glass_40_ffc73d_1x400.png</delete>
+		<delete>images/ui-bg_glass_55_fbf9ee_1x400.png</delete>
+		<delete>images/ui-bg_glass_65_ffffff_1x400.png</delete>
+		<delete>images/ui-bg_glass_75_dadada_1x400.png</delete>
+		<delete>images/ui-bg_glass_75_e6e6e6_1x400.png</delete>
+		<delete>images/ui-bg_highlight-soft_33_003147_1x100.png</delete>
+		<delete>images/ui-bg_highlight-soft_75_cccccc_1x100.png</delete>
+		<delete>images/ui-bg_highlight-soft_80_eeeeee_1x100.png</delete>
+		<delete>images/ui-bg_loop_25_000000_21x21.png</delete>
+		<delete>images/ui-icons_222222_256x240.png</delete>
+		<delete>images/ui-icons_888888_256x240.png</delete>
+	</styleupdate>
+</update>
