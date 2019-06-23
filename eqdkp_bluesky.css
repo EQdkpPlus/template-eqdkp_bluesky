@@ -4399,18 +4399,25 @@ td .bigDateTd{
 }
 
 .article-container.list-type4 {
-	width: 500px;
+	width: 480px;
 	margin: 0 15px 15px 0;
     border: 1px solid #1A0F08;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
     background-color: rgba(23, 31, 44, 0.4);
+	flex-grow: 1;
+	display: block;
 }
 
 .list-type4 .article-banner-image {
-	align-items:center;
-	display:flex;
-	max-height:160px;
 	overflow:hidden;
+}
+
+.list-type4 .article-banner-image a {
+	display: block;
+	height: 160px;
+	background-position: center center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
 }
 
 .list-type4 .news_author {
@@ -4860,4 +4867,8 @@ body.module-iframe {
 
 .module-iframe #plus_debug_tabs {
 	display: none;
+}
+
+.fixed_width textarea {
+	max-width: 90%;
 }
